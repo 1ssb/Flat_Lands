@@ -71,10 +71,10 @@
     }
   },
   "access": {
-    "dataset_button": "https://github.com/1ssb/Flat_Lands/releases/latest",
+    "dataset_button": "download-gate/",
     "paper_button": "https://arxiv.org/abs/2603.16016",
-    "download_counting": "Use GitHub Release asset download counts or an institutional download service.",
-    "email_collection": "Requires a privacy-compliant form or backend before the archive URL."
+    "download_counting": "Cloudflare KV counters in download-gate/worker.js count requests, sent emails, and signed download clicks.",
+    "email_collection": "The download gate validates email syntax server-side and sends the signed dataset link only to the submitted address."
   }
 }
 

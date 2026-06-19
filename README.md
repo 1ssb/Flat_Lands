@@ -3,8 +3,8 @@
 FlatLands is the official dataset release for **Generative Floormap Completion From a Single Egocentric View**.
 
 <p>
-  <a href="https://github.com/1ssb/Flat_Lands/releases/latest">
-    <img alt="Download FlatLands dataset" src="https://img.shields.io/badge/Download-Dataset-0b6bcb?style=for-the-badge">
+  <a href="download-gate/">
+    <img alt="Request FlatLands dataset by email" src="https://img.shields.io/badge/Request-Dataset-0b6bcb?style=for-the-badge">
   </a>
   <a href="https://arxiv.org/abs/2603.16016">
     <img alt="Read the FlatLands paper" src="https://img.shields.io/badge/Read-Paper-b31b1b?style=for-the-badge">
@@ -15,7 +15,7 @@ FlatLands is the official dataset release for **Generative Floormap Completion F
 
 This repository is reserved for the final dataset release only: dataset access, provenance, statistics, citation, and license notices.
 
-The dataset archives should be attached as GitHub Release assets, or hosted by an institutional/object-storage endpoint linked from the latest release. GitHub Release assets provide public download counts. Email collection requires a privacy-compliant form or backend; do not collect researcher emails in public GitHub issues.
+Dataset downloads are served through the email-gated request flow in `download-gate/`. The service validates the submitted email address, sends the signed dataset link to that address, and counts requests, sent emails, and download clicks. The final archive URL and email provider credentials must be configured as deployment secrets.
 
 ## Dataset Summary
 
@@ -47,14 +47,11 @@ The dataset archives should be attached as GitHub Release assets, or hosted by a
 ## Citation
 
 ```bibtex
-@misc{bhattacharjee2026flatlands,
-  title = {FlatLands: Generative Floormap Completion From a Single Egocentric View},
-  author = {Subhransu S. Bhattacharjee and Dylan Campbell and Rahul Shome},
-  year = {2026},
-  eprint = {2603.16016},
-  archivePrefix = {arXiv},
-  primaryClass = {cs.CV},
-  doi = {10.48550/arXiv.2603.16016}
+@inproceedings{bhattacharjee2026flatlands,
+  title     = {FlatLands: Generative Floormap Completion From a Single Egocentric View},
+  author    = {Bhattacharjee, Subhransu S. and Campbell, Dylan and Shome, Rahul},
+  booktitle = {European Conference on Computer Vision (ECCV)},
+  year      = {2026}
 }
 ```
 
