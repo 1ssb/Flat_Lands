@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use FlatLands, please cite the paper and dataset release."
+title: "FlatLands: Generative Floormap Completion From a Single Egocentric View"
+authors:
+  - family-names: "Bhattacharjee"
+    given-names: "Subhransu S."
+  - family-names: "Campbell"
+    given-names: "Dylan"
+  - family-names: "Shome"
+    given-names: "Rahul"
+year: 2026
+doi: "10.48550/arXiv.2603.16016"
+url: "https://arxiv.org/abs/2603.16016"
+repository-code: "https://github.com/1ssb/Flat_Lands"
+abstract: "FlatLands is a dataset and benchmark for single-view bird's-eye-view floor completion from egocentric observations."
+keywords:
+  - computer vision
+  - robotics
+  - indoor mapping
+  - floor completion
+  - uncertainty
+  - bird's-eye view
+

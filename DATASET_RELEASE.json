@@ -1,0 +1,80 @@
+{
+  "name": "FlatLands",
+  "release_date": "2026-06-20",
+  "paper": {
+    "title": "FlatLands: Generative Floormap Completion From a Single Egocentric View",
+    "authors": [
+      "Subhransu S. Bhattacharjee",
+      "Dylan Campbell",
+      "Rahul Shome"
+    ],
+    "arxiv_id": "2603.16016",
+    "doi": "10.48550/arXiv.2603.16016",
+    "url": "https://arxiv.org/abs/2603.16016"
+  },
+  "summary": {
+    "observations": 270575,
+    "paper_reported_real_metric_indoor_scenes": 17656,
+    "source_datasets": 6,
+    "filter": {
+      "conditional_signal_ratio_min": 0.1
+    },
+    "observation_files": [
+      "observed_floor.png",
+      "floor_map.png",
+      "unobserved.png",
+      "epistemic_mask.png",
+      "metadata.json"
+    ]
+  },
+  "splits": {
+    "train": 215342,
+    "validation": 26890,
+    "test": 28343
+  },
+  "kept_by_source": {
+    "3RScan": {
+      "train": 15425,
+      "validation": 1912,
+      "test": 879,
+      "total": 18216
+    },
+    "ARKitScenes": {
+      "train": 34151,
+      "validation": 4201,
+      "test": 1930,
+      "total": 40282
+    },
+    "Matterport3D": {
+      "train": 32196,
+      "validation": 4039,
+      "test": 1769,
+      "total": 38004
+    },
+    "ScanNet": {
+      "train": 20957,
+      "validation": 2609,
+      "test": 1197,
+      "total": 24763
+    },
+    "ZInD": {
+      "train": 112613,
+      "validation": 14129,
+      "test": 6354,
+      "total": 133096
+    },
+    "ScanNet++": {
+      "train": 0,
+      "validation": 0,
+      "test": 16214,
+      "total": 16214
+    }
+  },
+  "access": {
+    "dataset_button": "https://github.com/1ssb/Flat_Lands/releases/latest",
+    "paper_button": "https://arxiv.org/abs/2603.16016",
+    "download_counting": "Use GitHub Release asset download counts or an institutional download service.",
+    "email_collection": "Requires a privacy-compliant form or backend before the archive URL."
+  }
+}
+
