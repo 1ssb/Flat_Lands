@@ -2,7 +2,7 @@
 
 FlatLands is the official dataset release for **Generative Floormap Completion From a Single Egocentric View**.
 
-```html
+
 <p>
   <a href="download-gate/">
     <img
@@ -17,7 +17,6 @@ FlatLands is the official dataset release for **Generative Floormap Completion F
     >
   </a>
 </p>
-```
 
 
 ## Release Status
