@@ -6,7 +6,7 @@ FlatLands is the official dataset release for **Generative Floormap Completion F
   <a href="https://huggingface.co/datasets/Rudra1ssb/FlatLands">
     <img
       alt="FlatLands dataset on Hugging Face"
-      src="https://img.shields.io/badge/Hugging%20Face-Dataset-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black"
+      src="https://img.shields.io/badge/Hugging%20Face-Dataset-FFD21E?style=for-the-badge&logo=huggingface"
     >
   </a>
   <a href="https://arxiv.org/abs/2603.16016">
@@ -44,15 +44,6 @@ Model weights and code will be released soon.
 | Test | 28,343 |
 | Total | 270,575 |
 
-## Files
-
-- `STATS.md`: release statistics and per-source split counts.
-- `PROVENANCE.md`: dataset construction and per-observation provenance fields.
-- `LICENSE`: FlatLands release notice.
-- `LICENSES.md`: upstream source dataset license and terms pointers.
-- `DATASET_RELEASE.json`: machine-readable release metadata.
-- `CITATION.cff`: citation metadata.
-
 ## Citation
 
 ```bibtex
@@ -64,3 +55,53 @@ Model weights and code will be released soon.
 }
 ```
 
+Please also consider citing the underlying datasets as used:
+
+```bibtex
+
+@inproceedings{mp3d,
+  title     = {{Matterport3D}: Learning from {RGB-D} Data in Indoor Environments},
+  author    = {Chang, Angel X. and Dai, Angela and Funkhouser, Thomas and Halber, Maciej and Nie{\ss}ner, Matthias and Savva, Manolis and Song, Shuran and Zeng, Andy and Zhang, Yinda},
+  booktitle = {International Conference on 3D Vision (3DV)},
+  pages     = {667--676},
+  year      = {2017}
+}
+
+@inproceedings{dai2017scannet,
+  title     = {{ScanNet}: Richly-Annotated 3D Reconstructions of Indoor Scenes},
+  author    = {Dai, Angela and Chang, Angel X. and Savva, Manolis and Halber, Maciej and Funkhouser, Thomas and Nie{\ss}ner, Matthias},
+  booktitle = {Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
+  pages     = {2432--2443},
+  year      = {2017}
+}
+
+@inproceedings{yeshwanth2023scannetpp,
+  title     = {{ScanNet++}: A High-Fidelity Dataset of 3D Indoor Scenes},
+  author    = {Yeshwanth, Chandan and Liu, Yueh-Cheng and Nie{\ss}ner, Matthias and Dai, Angela},
+  booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
+  year      = {2023}
+}
+
+@inproceedings{baruch2021arkitscenes,
+  title     = {{ARKitScenes}: A Diverse Real-World Dataset for 3D Indoor Scene Understanding Using Mobile {RGB-D} Data},
+  author    = {Baruch, Gilad and Chen, Zhuoyuan and Dehghan, Afshin and Dimry, Tal and Feigin, Yuri and Fu, Peter and Gebauer, Thomas and Joffe, Brandon and Kurz, Daniel and Schwartz, Arik and Shulman, Elad},
+  booktitle = {Advances in Neural Information Processing Systems (NeurIPS) Datasets and Benchmarks Track},
+  year      = {2021}
+}
+
+@inproceedings{wald2019rio,
+  title     = {{RIO}: 3D Object Instance Re-Localization in Changing Indoor Environments},
+  author    = {Wald, Johanna and Avetisyan, Armen and Navab, Nassir and Tombari, Federico and Nie{\ss}ner, Matthias},
+  booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
+  pages     = {7657--7666},
+  year      = {2019}
+}
+
+@inproceedings{zind,
+  title     = {{Zillow Indoor Dataset}: Annotated Floor Plans with 360deg Panoramas and 3D Room Layouts},
+  author    = {Cruz, Steve and Hutchcroft, Will and Li, Yuguang and Khosravan, Naji and Boyadzhiev, Ivaylo and Kang, Sing Bing},
+  booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+  pages     = {2133--2143},
+  year      = {2021}
+}
+```
