@@ -18,13 +18,17 @@ FlatLands is the official dataset release for **Generative Floormap Completion F
 </p>
 
 
+
 ## Release Status
 
- - [20 June 2026] Dataset downloads are served through Huggingface dataset repository. 
+- **26 June 2026; Camera-Ready:** Dataset downloads are served through the Hugging Face dataset repository.
 
- - Model weights and code will be released soon. Tools used for creating the dataset will also been released in this repository. 
+- Model weights, code, and the tools used to construct the FlatLands dataset are planned for release in this repository.
 
- - Additional datasets including RGB image datapoints used for the direct RGB-to-BEV results and another challenging dataset (hidden) foir leaderboard evaluations will be hosted on Huggingface.
+- Additional release materials, including metadata for the RGB-to-BEV experiments and a private challenge split for leaderboard evaluation, will be hosted through Hugging Face.
+
+**Important:** **None** of the underlying source data from the datasets listed in [`LICENSES.md`](LICENSES.md) is redistributed by this repository. Only the transformed FlatLands dataset artifacts described in the paper are released. Users remain responsible for complying with the terms of the original source datasets.
+
 
 ## Dataset Summary
 
