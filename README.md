@@ -2,20 +2,31 @@
 
 FlatLands is the official dataset release for **Generative Floormap Completion From a Single Egocentric View**.
 
+```html
 <p>
   <a href="download-gate/">
-    <img alt="Request FlatLands dataset by email" src="https://img.shields.io/badge/Request-Dataset-0b6bcb?style=for-the-badge">
+    <img
+      alt="Request FlatLands dataset by email"
+      src="https://img.shields.io/badge/Request-Dataset-0b6bcb?style=for-the-badge"
+    >
   </a>
   <a href="https://arxiv.org/abs/2603.16016">
-    <img alt="Read the FlatLands paper" src="https://img.shields.io/badge/Read-Paper-b31b1b?style=for-the-badge">
+    <img
+      alt="Read the FlatLands paper"
+      src="https://img.shields.io/badge/Read-Paper-b31b1b?style=for-the-badge"
+    >
   </a>
 </p>
+```
+
 
 ## Release Status
 
-This repository is reserved for the final dataset release only: dataset access, provenance, statistics, citation, and license notices.
+This repository is reserved for the final code, dataset and model release. 
 
-Dataset downloads are served through the email-gated request flow in `download-gate/`. The service validates the submitted email address, sends the signed dataset link to that address, and counts requests, sent emails, and download clicks. The final archive URL and email provider credentials must be configured as deployment secrets.
+Dataset downloads are served through Huggingface dataset repository. Tools used for creating the dataset have also been released in this repository.
+
+Model weights and code will be released soon.
 
 ## Dataset Summary
 
