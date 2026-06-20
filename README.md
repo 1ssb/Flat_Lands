@@ -1,4 +1,4 @@
-# FlatLands Dataset
+# FlatLands Repository
 
 FlatLands is the official dataset release for **Generative Floormap Completion From a Single Egocentric View**.
 
