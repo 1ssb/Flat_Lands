@@ -2,12 +2,11 @@
 
 FlatLands is the official dataset release for **Generative Floormap Completion From a Single Egocentric View**.
 
-
 <p>
-  <a href="download-gate/">
+  <a href="https://huggingface.co/datasets/Rudra1ssb/FlatLands">
     <img
-      alt="Request FlatLands dataset by email"
-      src="https://img.shields.io/badge/Request-Dataset-0b6bcb?style=for-the-badge"
+      alt="FlatLands dataset on Hugging Face"
+      src="https://img.shields.io/badge/Hugging%20Face-Dataset-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black"
     >
   </a>
   <a href="https://arxiv.org/abs/2603.16016">
