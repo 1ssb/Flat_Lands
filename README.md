@@ -52,7 +52,7 @@ FlatLands is the official dataset release for **Generative Floormap Completion F
 
 ```bibtex
 @inproceedings{bhattacharjee2026flatlands,
-  title     = {FlatLands: Generative Floormap Completion From a Single Egocentric View},
+  title     = {{FlatLands}: Generative Floormap Completion From a Single Egocentric View},
   author    = {Bhattacharjee, Subhransu S. and Campbell, Dylan and Shome, Rahul},
   booktitle = {European Conference on Computer Vision (ECCV)},
   year      = {2026}
