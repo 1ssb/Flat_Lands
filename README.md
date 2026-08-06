@@ -15,8 +15,18 @@ instead of forcing a single guess.
   </a>
 </p>
 
+### Data Acquisition
+
 <p align="center">
-  <img src="docs/assets/readme/observation_synthesis.png" width="82%" alt="FlatLands observation synthesis from an indoor reconstruction to egocentric BEV floor maps">
+  <img src="docs/assets/readme/observation_synthesis.png" width="82%" alt="Virtual camera observation synthesis from a reconstructed indoor scene to aligned BEV maps">
+  <br><sub>A physically valid virtual camera observation is back-projected, rasterized, and aligned into egocentric BEV maps.</sub>
+</p>
+
+### RGB-To-Floormap Process
+
+<p align="center">
+  <img src="docs/assets/readme/process_pipeline.png" width="96%" alt="FlatLands pipeline from RGB input through depth and segmentation to sampled BEV floormap completions">
+  <br><sub>One RGB frame becomes observed BEV evidence, then a conditional generator samples plausible hidden layouts.</sub>
 </p>
 
 ## Release Status
@@ -122,41 +132,6 @@ metrics therefore include both fidelity and multi-sample uncertainty.
   </tr>
 </table>
 
-## RGB-To-BEV Pipeline
-
-The paper also evaluates a monocular path from RGB to BEV conditioning: estimate
-depth and floor segmentation, project the observed floor into BEV, then sample
-floor-map completions.
-
-<table>
-  <tr>
-    <td align="center" width="16%">
-      <img src="docs/assets/readme/pipeline_rgb.png" width="100%" alt="RGB input">
-      <br><sub>RGB</sub>
-    </td>
-    <td align="center" width="16%">
-      <img src="docs/assets/readme/pipeline_depth.png" width="100%" alt="Estimated depth">
-      <br><sub>Depth</sub>
-    </td>
-    <td align="center" width="16%">
-      <img src="docs/assets/readme/pipeline_segmentation.png" width="100%" alt="Floor segmentation">
-      <br><sub>Floor segmentation</sub>
-    </td>
-    <td align="center" width="16%">
-      <img src="docs/assets/readme/pipeline_observed_floor.png" width="100%" alt="Projected observed floor">
-      <br><sub>Observed floor</sub>
-    </td>
-    <td align="center" width="16%">
-      <img src="docs/assets/readme/pipeline_sample_1.png" width="100%" alt="First completed floor sample">
-      <br><sub>Sample 1</sub>
-    </td>
-    <td align="center" width="16%">
-      <img src="docs/assets/readme/pipeline_sample_2.png" width="100%" alt="Second completed floor sample">
-      <br><sub>Sample 2</sub>
-    </td>
-  </tr>
-</table>
-
 ## Download
 
 ```bash
@@ -197,8 +172,9 @@ Copyright (c) 2026 Subhransu S. Bhattacharjee, Dylan Campbell, and Rahul Shome.
 FlatLands release materials, derived BEV maps, masks, metadata, statistics, and
 provenance records are provided under the FlatLands release notice in
 [`LICENSE`](LICENSE). The website and README media are research figures for
-explaining the benchmark; underlying source dataset assets remain governed by
-their original terms. See [`COPYRIGHT.md`](COPYRIGHT.md) and
+explaining the benchmark. Paper figures are copyright (c) 2026 the FlatLands
+authors and reproduced under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/);
+underlying source dataset assets remain governed by their original terms. See [`COPYRIGHT.md`](COPYRIGHT.md) and
 [`LICENSES.md`](LICENSES.md).
 
 ## Citation

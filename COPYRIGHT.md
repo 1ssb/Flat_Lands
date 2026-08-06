@@ -18,6 +18,10 @@ listed in [LICENSES.md](LICENSES.md). Per-observation `metadata.json` source
 fields are the authority for determining which upstream terms apply to each
 FlatLands observation.
 
+Figures reproduced from the FlatLands paper are copyright (c) 2026 the
+FlatLands authors and are available under the paper's
+[CC BY 4.0 license](https://creativecommons.org/licenses/by/4.0/).
+
 Source dataset names, company and institution names, trademarks, and logos are
 the property of their respective owners. Marks for Technical University of
 Munich, Apple, Matterport, ScanNet, Zillow, and ScanNet++ are displayed solely
