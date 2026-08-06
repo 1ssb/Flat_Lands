@@ -31,7 +31,7 @@ jobs:
       - name: Prepare static site
         run: |
           mkdir -p _site/docs/assets/readme
-          cp index.html README.md LICENSE LICENSES.md PROVENANCE.md .nojekyll _site/
+          cp index.html README.md LICENSE LICENSES.md PROVENANCE.md COPYRIGHT.md .nojekyll _site/
           cp docs/assets/readme/*.png _site/docs/assets/readme/
 
       - name: Upload Pages artifact

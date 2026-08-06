@@ -177,6 +177,7 @@ The Hub dataset viewer contains small preview parquet splits; the full
 | [`PROVENANCE.md`](PROVENANCE.md) | Dataset construction, split, source, and metadata details |
 | [`LICENSE`](LICENSE) | FlatLands dataset release notice |
 | [`LICENSES.md`](LICENSES.md) | Upstream dataset terms and project links |
+| [`COPYRIGHT.md`](COPYRIGHT.md) | Copyright and media/data rights notice |
 | [`docs/assets/readme/`](docs/assets/readme/) | README figures and visual examples |
 
 ## Data Use
@@ -185,6 +186,16 @@ FlatLands is a derived research dataset. Users must comply with the upstream
 source dataset terms listed in [`LICENSES.md`](LICENSES.md). If an upstream term
 is more restrictive than this release notice, the upstream term controls for the
 observations derived from that source.
+
+## Copyright
+
+Copyright (c) 2026 Subhransu S. Bhattacharjee, Dylan Campbell, and Rahul Shome.
+FlatLands release materials, derived BEV maps, masks, metadata, statistics, and
+provenance records are provided under the FlatLands release notice in
+[`LICENSE`](LICENSE). The website and README media are research figures for
+explaining the benchmark; underlying source dataset assets remain governed by
+their original terms. See [`COPYRIGHT.md`](COPYRIGHT.md) and
+[`LICENSES.md`](LICENSES.md).
 
 ## Citation
 

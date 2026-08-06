@@ -40,13 +40,22 @@
       }
 
       .hero {
-        min-height: 84vh;
+        position: relative;
+        min-height: 92vh;
         display: grid;
         align-items: end;
-        background:
-          linear-gradient(180deg, rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0.52)),
-          url("docs/assets/readme/hero_task_background.png") center / cover no-repeat;
+        overflow: hidden;
+        background: url("docs/assets/readme/pipeline_rgb.png") center / cover no-repeat;
         color: #fff;
+      }
+
+      .hero::before {
+        position: absolute;
+        inset: 0;
+        content: "";
+        background:
+          linear-gradient(90deg, rgba(4, 7, 9, 0.92) 0%, rgba(4, 7, 9, 0.76) 38%, rgba(4, 7, 9, 0.26) 72%),
+          linear-gradient(180deg, rgba(4, 7, 9, 0.08) 0%, rgba(4, 7, 9, 0.68) 100%);
       }
 
       .hero-inner,
@@ -56,7 +65,13 @@
       }
 
       .hero-inner {
-        padding: 64px 0 48px;
+        position: relative;
+        z-index: 1;
+        display: grid;
+        grid-template-columns: minmax(0, 0.95fr) minmax(420px, 0.72fr);
+        gap: 42px;
+        align-items: end;
+        padding: 96px 0 58px;
       }
 
       .eyebrow {
@@ -86,6 +101,77 @@
         margin-bottom: 28px;
         color: #eef5f4;
         font-size: clamp(1.05rem, 2.2vw, 1.36rem);
+      }
+
+      .hero-flow {
+        width: min(100%, 560px);
+        justify-self: end;
+        align-self: center;
+        display: grid;
+        gap: 18px;
+      }
+
+      .flow-row {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 26px minmax(0, 1fr) 26px minmax(0, 1fr);
+        gap: 10px;
+        align-items: center;
+      }
+
+      .flow-row.bottom {
+        width: calc(100% - 52px);
+        margin-left: 52px;
+      }
+
+      .flow-tile {
+        margin: 0;
+        padding: 7px;
+        border: 1px solid rgba(246, 209, 178, 0.88);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.95);
+        box-shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
+      }
+
+      .flow-tile img {
+        width: 100%;
+        aspect-ratio: 4 / 3;
+        object-fit: cover;
+        border: 1px solid rgba(20, 21, 24, 0.12);
+        border-radius: 4px;
+        background: #fff;
+      }
+
+      .flow-tile.square img {
+        aspect-ratio: 1 / 1;
+        object-fit: contain;
+      }
+
+      .flow-tile figcaption {
+        margin-top: 6px;
+        color: #30343b;
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-align: center;
+      }
+
+      .flow-arrow {
+        position: relative;
+        display: block;
+        height: 3px;
+        border-radius: 999px;
+        background: #f4c7a6;
+      }
+
+      .flow-arrow::after {
+        position: absolute;
+        top: -5px;
+        right: -1px;
+        width: 0;
+        height: 0;
+        border-top: 6px solid transparent;
+        border-bottom: 6px solid transparent;
+        border-left: 9px solid #f4c7a6;
+        content: "";
       }
 
       .actions {
@@ -235,10 +321,29 @@
         background: #fff8f2;
       }
 
+      .rights {
+        background: #f7f5ef;
+      }
+
+      .rights-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 0.9fr) minmax(320px, 1.1fr);
+        gap: 32px;
+        align-items: start;
+      }
+
+      .rights-copy {
+        color: var(--muted);
+      }
+
       footer {
         padding: 32px 0;
         color: var(--muted);
         border-top: 1px solid var(--line);
+      }
+
+      footer p {
+        margin-bottom: 8px;
       }
 
       @media (max-width: 820px) {
@@ -246,8 +351,19 @@
           min-height: 78vh;
         }
 
+        .hero-inner {
+          grid-template-columns: 1fr;
+          padding-top: 72px;
+        }
+
+        .hero-flow {
+          justify-self: stretch;
+          width: 100%;
+        }
+
         .lead-row,
-        .two-col {
+        .two-col,
+        .rights-grid {
           grid-template-columns: 1fr;
         }
 
@@ -262,6 +378,17 @@
       }
 
       @media (max-width: 520px) {
+        .flow-row,
+        .flow-row.bottom {
+          width: 100%;
+          margin-left: 0;
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
+        .flow-arrow {
+          display: none;
+        }
+
         .facts,
         .image-strip,
         .image-strip.six {
@@ -277,18 +404,54 @@
   <body>
     <header class="hero">
       <div class="hero-inner">
-        <p class="eyebrow">ECCV 2026 dataset and benchmark</p>
-        <h1>FlatLands</h1>
-        <p class="hero-copy">
-          Generative floormap completion from a single egocentric view, with
-          real indoor scenes, aligned BEV supervision, and uncertainty-aware
-          evaluation.
-        </p>
-        <nav class="actions" aria-label="Primary links">
-          <a class="button primary" href="https://huggingface.co/datasets/Rudra1ssb/FlatLands">Download Dataset</a>
-          <a class="button" href="https://arxiv.org/abs/2603.16016">Read Paper</a>
-          <a class="button" href="https://github.com/1ssb/Flat_Lands">GitHub</a>
-        </nav>
+        <div class="hero-main">
+          <p class="eyebrow">ECCV 2026 dataset and benchmark</p>
+          <h1>FlatLands</h1>
+          <p class="hero-copy">
+            Generative floormap completion from a single egocentric view, with
+            real indoor scenes, aligned BEV supervision, and uncertainty-aware
+            evaluation.
+          </p>
+          <nav class="actions" aria-label="Primary links">
+            <a class="button primary" href="https://huggingface.co/datasets/Rudra1ssb/FlatLands">Download Dataset</a>
+            <a class="button" href="https://arxiv.org/abs/2603.16016">Read Paper</a>
+            <a class="button" href="https://github.com/1ssb/Flat_Lands">GitHub</a>
+          </nav>
+        </div>
+        <div class="hero-flow" aria-label="RGB to BEV floormap completion workflow">
+          <div class="flow-row">
+            <figure class="flow-tile">
+              <img src="docs/assets/readme/pipeline_rgb.png" alt="Egocentric RGB input">
+              <figcaption>RGB</figcaption>
+            </figure>
+            <span class="flow-arrow" aria-hidden="true"></span>
+            <figure class="flow-tile">
+              <img src="docs/assets/readme/pipeline_depth.png" alt="Estimated depth">
+              <figcaption>Depth</figcaption>
+            </figure>
+            <span class="flow-arrow" aria-hidden="true"></span>
+            <figure class="flow-tile">
+              <img src="docs/assets/readme/pipeline_segmentation.png" alt="Estimated floor segmentation">
+              <figcaption>Floor segmentation</figcaption>
+            </figure>
+          </div>
+          <div class="flow-row bottom">
+            <figure class="flow-tile square">
+              <img src="docs/assets/readme/pipeline_observed_floor.png" alt="Projected observed floor map">
+              <figcaption>Observed BEV</figcaption>
+            </figure>
+            <span class="flow-arrow" aria-hidden="true"></span>
+            <figure class="flow-tile square">
+              <img src="docs/assets/readme/pipeline_sample_1.png" alt="Sampled completed floormap">
+              <figcaption>Completion</figcaption>
+            </figure>
+            <span class="flow-arrow" aria-hidden="true"></span>
+            <figure class="flow-tile square">
+              <img src="docs/assets/readme/inverse_variance.png" alt="Completion variance map">
+              <figcaption>Uncertainty</figcaption>
+            </figure>
+          </div>
+        </div>
       </div>
     </header>
 
@@ -436,11 +599,42 @@ unzip FlatLands_final_dataset.zip -d FlatLands</code></pre>
           </div>
         </div>
       </section>
+
+      <section class="rights" id="copyright">
+        <div class="section-inner rights-grid">
+          <div>
+            <h2>Copyright &amp; Data Rights</h2>
+            <p class="section-copy">
+              FlatLands release materials are copyright (c) 2026 Subhransu S.
+              Bhattacharjee, Dylan Campbell, and Rahul Shome.
+            </p>
+          </div>
+          <div class="rights-copy">
+            <p>
+              FlatLands is a derived research dataset. The derived BEV maps,
+              masks, metadata, statistics, provenance records, and release text
+              are provided under the FlatLands release notice.
+            </p>
+            <p>
+              The underlying RGB-D captures, meshes, point clouds, panoramas,
+              and source archives remain governed by their original dataset
+              terms. This site includes research figures to explain the
+              benchmark and does not relicense upstream source assets.
+            </p>
+            <p>
+              See <a href="COPYRIGHT.md">COPYRIGHT.md</a>,
+              <a href="LICENSE">LICENSE</a>, and
+              <a href="LICENSES.md">LICENSES.md</a>.
+            </p>
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer>
       <div class="section-inner">
-        <span>FlatLands: Generative Floormap Completion From a Single Egocentric View.</span>
+        <p>Copyright (c) 2026 Subhransu S. Bhattacharjee, Dylan Campbell, and Rahul Shome.</p>
+        <p>FlatLands: Generative Floormap Completion From a Single Egocentric View.</p>
       </div>
     </footer>
   </body>
