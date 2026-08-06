@@ -2,10 +2,9 @@
 
 **Generative Floormap Completion From a Single Egocentric View**
 
-FlatLands is the official dataset and benchmark release for completing metric
-bird's-eye-view indoor floor maps from one partial egocentric observation. The
-task is intentionally uncertainty-aware: one visible floor fragment can support
-several plausible completions.
+**TL;DR:** FlatLands asks a model to complete a metric indoor floormap from one
+partial egocentric observation and represent multiple plausible hidden layouts
+instead of forcing a single guess.
 
 <p>
   <a href="https://huggingface.co/datasets/Rudra1ssb/FlatLands">
@@ -13,9 +12,6 @@ several plausible completions.
   </a>
   <a href="https://arxiv.org/abs/2603.16016">
     <img alt="Read the FlatLands paper" src="https://img.shields.io/badge/arXiv-2603.16016-b31b1b?style=for-the-badge">
-  </a>
-  <a href="https://doi.org/10.48550/arXiv.2603.16016">
-    <img alt="DOI for the FlatLands paper" src="https://img.shields.io/badge/DOI-10.48550%2FarXiv.2603.16016-blue?style=for-the-badge">
   </a>
 </p>
 
@@ -44,9 +40,9 @@ several plausible completions.
 | <img src="docs/assets/readme/sources/3rscan-tum.svg" width="42" alt="TUM"><br>**[3RScan](https://waldjohannau.github.io/RIO/)** | Changing indoor environments with aligned multi-session RGB-D reconstructions and semantic OBJ meshes. **1,291 scenes / 18,216 observations.** |
 | <img src="docs/assets/readme/sources/arkitscenes-apple.jpg" width="42" alt="Apple"><br>**[ARKitScenes](https://machinelearning.apple.com/research/arkitscenes)** | Mobile LiDAR RGB-D captures with poses, reconstructed PLY surfaces, registered depth, and labeled furniture. **4,803 scenes / 40,282 observations.** |
 | <img src="docs/assets/readme/sources/matterport.svg" width="42" alt="Matterport"><br>**[Matterport3D](https://niessner.github.io/Matterport/)** | Building-scale RGB-D panoramas, globally aligned reconstructions, camera poses, and semantic PLY meshes. **2,101 scenes / 38,004 observations.** |
-| <img src="docs/assets/readme/sources/scannet.png" width="42" alt="ScanNet"><br>**[ScanNet](https://github.com/ScanNet/ScanNet)** | Indoor RGB-D scans with recovered camera poses, surface reconstructions, and instance-level semantic PLY meshes. **1,508 scenes / 24,763 observations.** |
+| <img src="docs/assets/readme/sources/scannet.png" width="42" alt="ScanNet"><br>**[ScanNet](https://github.com/ScanNet/ScanNet)**<br><sub>TUM + Stanford + Princeton</sub> | Indoor RGB-D scans with recovered camera poses, surface reconstructions, and instance-level semantic PLY meshes. **1,508 scenes / 24,763 observations.** |
 | <img src="docs/assets/readme/sources/zind-zillow.png" width="42" alt="Zillow"><br>**[ZInD](https://github.com/zillow/zind)** | Panoramas of real homes with room layouts, openings, camera poses, floor plans, and metric floor geometry. **7,026 scenes / 133,096 observations.** |
-| <img src="docs/assets/readme/sources/scannetpp.png" width="42" alt="ScanNet++"><br>**[ScanNet++](https://scannetpp.mlsg.cit.tum.de/scannetpp/)** | High-fidelity laser scans, DSLR imagery, iPhone RGB-D, and long-tail semantics; reserved for OOD testing. **927 scenes / 16,214 observations.** |
+| <img src="docs/assets/readme/sources/scannetpp.png" width="42" alt="ScanNet++"><br>**[ScanNet++](https://scannetpp.mlsg.cit.tum.de/scannetpp/)**<br><sub>TUM</sub> | High-fidelity laser scans, DSLR imagery, iPhone RGB-D, and long-tail semantics; reserved for OOD testing. **927 scenes / 16,214 observations.** |
 
 Counts are FlatLands scene layouts and retained observations, not the upstream
 datasets' published totals. See [`LICENSES.md`](LICENSES.md) for source terms.

@@ -26,6 +26,10 @@ not imply sponsorship or endorsement of FlatLands. The site uses marks obtained
 from the respective official project, institution, company, or GitHub
 organization pages and does not grant any rights to those marks.
 
+The Hugging Face, arXiv, and GitHub destination icons are sourced from Simple
+Icons and are used only to identify their respective external services. The
+underlying names and marks remain the property of their respective owners.
+
 Use of FlatLands is permitted for academic research, benchmarking, and
 reproducibility subject to the release notice in [LICENSE](LICENSE). Commercial
 use is permitted only where allowed by every applicable upstream source dataset

@@ -184,21 +184,46 @@
         display: inline-flex;
         align-items: center;
         justify-content: center;
+        gap: 9px;
         min-height: 44px;
         padding: 10px 16px;
-        border: 1px solid rgba(255, 255, 255, 0.46);
+        border: 1px solid transparent;
         border-radius: 6px;
-        color: #fff;
         font-weight: 700;
         text-decoration: none;
-        background: rgba(255, 255, 255, 0.12);
-        backdrop-filter: blur(8px);
+        box-shadow: 0 8px 22px rgba(0, 0, 0, 0.2);
+        transition: transform 160ms ease, box-shadow 160ms ease;
       }
 
-      .button.primary {
-        border-color: #f4c7a6;
-        color: #20130c;
-        background: #f4c7a6;
+      .button img {
+        width: 20px;
+        height: 20px;
+        flex: 0 0 20px;
+      }
+
+      .button:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 11px 26px rgba(0, 0, 0, 0.26);
+      }
+
+      .button:focus-visible {
+        outline: 3px solid #fff;
+        outline-offset: 3px;
+      }
+
+      .button.huggingface {
+        color: #191919;
+        background: #ffd21e;
+      }
+
+      .button.arxiv {
+        color: #fff;
+        background: #b31b1b;
+      }
+
+      .button.github {
+        color: #171515;
+        background: #fff;
       }
 
       main {
@@ -563,9 +588,18 @@
             evaluation.
           </p>
           <nav class="actions" aria-label="Primary links">
-            <a class="button primary" href="https://huggingface.co/datasets/Rudra1ssb/FlatLands">Download Dataset</a>
-            <a class="button" href="https://arxiv.org/abs/2603.16016">Read Paper</a>
-            <a class="button" href="https://github.com/1ssb/Flat_Lands">GitHub</a>
+            <a class="button huggingface" href="https://huggingface.co/datasets/Rudra1ssb/FlatLands">
+              <img src="docs/assets/readme/brands/huggingface.svg" alt="" aria-hidden="true">
+              <span>Download Dataset</span>
+            </a>
+            <a class="button arxiv" href="https://arxiv.org/abs/2603.16016">
+              <img src="docs/assets/readme/brands/arxiv.svg" alt="" aria-hidden="true">
+              <span>Read Paper</span>
+            </a>
+            <a class="button github" href="https://github.com/1ssb/Flat_Lands">
+              <img src="docs/assets/readme/brands/github.svg" alt="" aria-hidden="true">
+              <span>GitHub</span>
+            </a>
           </nav>
         </div>
         <div class="hero-flow" aria-label="RGB to BEV floormap completion workflow">
@@ -609,12 +643,11 @@
       <section>
         <div class="section-inner lead-row">
           <div>
-            <h2>Single-view BEV floor completion.</h2>
+            <h2>TL;DR</h2>
             <p class="section-copy">
-              FlatLands turns partial egocentric floor evidence into a
-              benchmark for completing metric traversability maps. Each
-              observation preserves what the camera saw and asks models to infer
-              only the valid, unobserved region.
+              FlatLands asks a model to complete a metric indoor floormap from
+              one partial egocentric observation and represent multiple
+              plausible hidden layouts instead of forcing a single guess.
             </p>
           </div>
           <div class="facts">
@@ -721,7 +754,7 @@
                   <img src="docs/assets/readme/sources/scannet.png" alt="ScanNet">
                 </div>
                 <div>
-                  <p class="source-owner">Stanford + Princeton + TUM</p>
+                  <p class="source-owner">TUM + Stanford + Princeton</p>
                   <h3>ScanNet</h3>
                 </div>
               </header>
@@ -773,7 +806,7 @@
                   <img src="docs/assets/readme/sources/scannetpp.png" alt="ScanNet++">
                 </div>
                 <div>
-                  <p class="source-owner">Technical University of Munich</p>
+                  <p class="source-owner">TUM</p>
                   <h3>ScanNet++</h3>
                 </div>
               </header>
