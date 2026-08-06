@@ -2,6 +2,10 @@
 
 **Generative Floormap Completion From a Single Egocentric View**
 
+[Subhransu S. Bhattacharjee](https://1ssb.github.io/) &middot;
+[Dylan Campbell](https://comp.anu.edu.au/people/dylan-campbell/) &middot;
+[Rahul Shome](https://comp.anu.edu.au/people/rahul-shome/)
+
 **TL;DR:** FlatLands asks a model to complete a metric indoor floormap from one
 partial egocentric observation and represent multiple plausible hidden layouts
 instead of forcing a single guess.

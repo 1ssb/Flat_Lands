@@ -49,17 +49,52 @@
         color: #fff;
       }
 
-      .hero-montage {
+      .hero-reel {
         position: absolute;
         z-index: 0;
         inset: 0;
+        display: grid;
+        grid-template-rows: repeat(2, minmax(0, 1fr));
+        overflow: hidden;
       }
 
-      .hero-montage img {
-        width: 100%;
+      .hero-reel-row {
+        min-height: 0;
+        overflow: hidden;
+      }
+
+      .hero-reel-row + .hero-reel-row {
+        border-top: 4px solid rgba(9, 11, 13, 0.7);
+      }
+
+      .hero-reel-track {
+        display: flex;
+        width: max-content;
         height: 100%;
-        object-fit: cover;
-        object-position: center;
+        animation: hero-reel-scroll 82s linear infinite;
+        will-change: transform;
+      }
+
+      .hero-reel-row.reverse .hero-reel-track {
+        animation-direction: reverse;
+        animation-duration: 88s;
+      }
+
+      .hero-reel-track img {
+        width: auto;
+        max-width: none;
+        height: 100%;
+        flex: 0 0 auto;
+      }
+
+      @keyframes hero-reel-scroll {
+        from {
+          transform: translateX(0);
+        }
+
+        to {
+          transform: translateX(-50%);
+        }
       }
 
       .hero::before {
@@ -86,6 +121,29 @@
 
       .hero-main {
         width: min(760px, 100%);
+      }
+
+      .hero-authors {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px 10px;
+        margin-bottom: 18px;
+        color: #d5dddc;
+        font-size: 0.96rem;
+      }
+
+      .hero-authors a {
+        color: #fff;
+        font-weight: 700;
+        text-decoration: none;
+      }
+
+      .hero-authors a:hover {
+        text-decoration: underline;
+      }
+
+      .hero-authors span {
+        color: #efb88f;
       }
 
       .eyebrow {
@@ -528,10 +586,6 @@
           min-height: 78vh;
         }
 
-        .hero-montage img {
-          object-position: 42% center;
-        }
-
         .hero::before {
           background:
             linear-gradient(90deg, rgba(4, 7, 9, 0.9) 0%, rgba(4, 7, 9, 0.66) 100%),
@@ -584,17 +638,46 @@
           padding: 48px 0;
         }
       }
+
+      @media (prefers-reduced-motion: reduce) {
+        .hero-reel-track {
+          animation: none;
+          transform: translateX(-12%);
+        }
+
+        .hero-reel-row.reverse .hero-reel-track {
+          transform: translateX(-34%);
+        }
+      }
     </style>
   </head>
   <body>
     <header class="hero">
-      <div class="hero-montage" aria-hidden="true">
-        <img src="docs/assets/readme/hero_rgb_montage.png" alt="">
+      <div class="hero-reel" aria-hidden="true">
+        <div class="hero-reel-row">
+          <div class="hero-reel-track">
+            <img src="docs/assets/readme/hero_rgb_strip_1.jpg" alt="">
+            <img src="docs/assets/readme/hero_rgb_strip_1.jpg" alt="">
+          </div>
+        </div>
+        <div class="hero-reel-row reverse">
+          <div class="hero-reel-track">
+            <img src="docs/assets/readme/hero_rgb_strip_2.jpg" alt="">
+            <img src="docs/assets/readme/hero_rgb_strip_2.jpg" alt="">
+          </div>
+        </div>
       </div>
       <div class="hero-inner">
         <div class="hero-main">
           <p class="eyebrow">ECCV 2026 dataset and benchmark</p>
           <h1>FlatLands</h1>
+          <p class="hero-authors" aria-label="Authors">
+            <a href="https://1ssb.github.io/" target="_blank" rel="noreferrer">Subhransu S. Bhattacharjee</a>
+            <span aria-hidden="true">/</span>
+            <a href="https://comp.anu.edu.au/people/dylan-campbell/" target="_blank" rel="noreferrer">Dylan Campbell</a>
+            <span aria-hidden="true">/</span>
+            <a href="https://comp.anu.edu.au/people/rahul-shome/" target="_blank" rel="noreferrer">Rahul Shome</a>
+          </p>
           <p class="hero-copy">
             Generative floormap completion from a single egocentric view, with
             real indoor scenes, aligned BEV supervision, and uncertainty-aware
@@ -619,6 +702,24 @@
     </header>
 
     <main>
+      <section>
+        <div class="section-inner lead-row">
+          <div>
+            <h2>TL;DR</h2>
+            <p class="section-copy">
+              FlatLands asks a model to complete a metric indoor floormap from
+              one partial egocentric observation and represent multiple
+              plausible hidden layouts instead of forcing a single guess.
+            </p>
+          </div>
+          <div class="facts">
+            <div class="fact"><strong>270,575</strong><span>observations</span></div>
+            <div class="fact"><strong>17,656</strong><span>real metric indoor scenes</span></div>
+            <div class="fact"><strong>6</strong><span>source datasets</span></div>
+          </div>
+        </div>
+      </section>
+
       <section class="visual-story" id="construction">
         <div class="section-inner">
           <header class="visual-intro">
@@ -661,24 +762,6 @@
               <figcaption>Paper Figure 1: the complete RGB-to-floormap process.</figcaption>
             </figure>
           </article>
-        </div>
-      </section>
-
-      <section>
-        <div class="section-inner lead-row">
-          <div>
-            <h2>TL;DR</h2>
-            <p class="section-copy">
-              FlatLands asks a model to complete a metric indoor floormap from
-              one partial egocentric observation and represent multiple
-              plausible hidden layouts instead of forcing a single guess.
-            </p>
-          </div>
-          <div class="facts">
-            <div class="fact"><strong>270,575</strong><span>observations</span></div>
-            <div class="fact"><strong>17,656</strong><span>real metric indoor scenes</span></div>
-            <div class="fact"><strong>6</strong><span>source datasets</span></div>
-          </div>
         </div>
       </section>
 
