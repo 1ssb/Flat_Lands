@@ -36,9 +36,6 @@ several plausible completions.
 | Observations | 270,575 |
 | Real metric indoor scenes | 17,656 |
 | Source datasets | 6 |
-| Canonical map size | 256 x 256 |
-| Splits | 215,342 train / 26,890 validation / 28,343 test |
-| Filtering threshold | `conditional_signal_ratio >= 0.10` |
 
 Source datasets: 3RScan, ARKitScenes, Matterport3D, ScanNet, ZInD, and
 ScanNet++.
