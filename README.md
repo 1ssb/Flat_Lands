@@ -37,8 +37,19 @@ several plausible completions.
 | Real metric indoor scenes | 17,656 |
 | Source datasets | 6 |
 
-Source datasets: 3RScan, ARKitScenes, Matterport3D, ScanNet, ZInD, and
-ScanNet++.
+## Source Datasets
+
+| Source | What it contributes to FlatLands |
+| --- | --- |
+| <img src="docs/assets/readme/sources/3rscan-tum.svg" width="42" alt="TUM"><br>**[3RScan](https://waldjohannau.github.io/RIO/)** | Changing indoor environments with aligned multi-session RGB-D reconstructions and semantic OBJ meshes. **1,291 scenes / 18,216 observations.** |
+| <img src="docs/assets/readme/sources/arkitscenes-apple.jpg" width="42" alt="Apple"><br>**[ARKitScenes](https://machinelearning.apple.com/research/arkitscenes)** | Mobile LiDAR RGB-D captures with poses, reconstructed PLY surfaces, registered depth, and labeled furniture. **4,803 scenes / 40,282 observations.** |
+| <img src="docs/assets/readme/sources/matterport.svg" width="42" alt="Matterport"><br>**[Matterport3D](https://niessner.github.io/Matterport/)** | Building-scale RGB-D panoramas, globally aligned reconstructions, camera poses, and semantic PLY meshes. **2,101 scenes / 38,004 observations.** |
+| <img src="docs/assets/readme/sources/scannet.png" width="42" alt="ScanNet"><br>**[ScanNet](https://github.com/ScanNet/ScanNet)** | Indoor RGB-D scans with recovered camera poses, surface reconstructions, and instance-level semantic PLY meshes. **1,508 scenes / 24,763 observations.** |
+| <img src="docs/assets/readme/sources/zind-zillow.png" width="42" alt="Zillow"><br>**[ZInD](https://github.com/zillow/zind)** | Panoramas of real homes with room layouts, openings, camera poses, floor plans, and metric floor geometry. **7,026 scenes / 133,096 observations.** |
+| <img src="docs/assets/readme/sources/scannetpp.png" width="42" alt="ScanNet++"><br>**[ScanNet++](https://scannetpp.mlsg.cit.tum.de/scannetpp/)** | High-fidelity laser scans, DSLR imagery, iPhone RGB-D, and long-tail semantics; reserved for OOD testing. **927 scenes / 16,214 observations.** |
+
+Counts are FlatLands scene layouts and retained observations, not the upstream
+datasets' published totals. See [`LICENSES.md`](LICENSES.md) for source terms.
 
 ## Observation Packet
 

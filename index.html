@@ -256,6 +256,143 @@
         font-size: 0.92rem;
       }
 
+      .source-section {
+        background: #f4f7f5;
+      }
+
+      .source-intro {
+        display: grid;
+        grid-template-columns: minmax(0, 0.7fr) minmax(320px, 1.3fr);
+        gap: 36px;
+        align-items: end;
+        margin-bottom: 30px;
+      }
+
+      .source-intro h2,
+      .source-intro p {
+        margin-bottom: 0;
+      }
+
+      .source-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 14px;
+      }
+
+      .source-card {
+        --source-color: var(--accent);
+        display: flex;
+        min-width: 0;
+        min-height: 420px;
+        flex-direction: column;
+        padding: 22px;
+        border: 1px solid var(--line);
+        border-top: 4px solid var(--source-color);
+        border-radius: 6px;
+        background: #fff;
+      }
+
+      .source-card-header {
+        display: grid;
+        grid-template-columns: 64px minmax(0, 1fr);
+        gap: 14px;
+        align-items: center;
+        margin-bottom: 18px;
+      }
+
+      .source-mark {
+        display: grid;
+        width: 64px;
+        height: 64px;
+        place-items: center;
+        overflow: hidden;
+        border: 1px solid #d9ddda;
+        border-radius: 6px;
+        background: #f0f1ef;
+      }
+
+      .source-mark img {
+        width: 100%;
+        height: 100%;
+        padding: 10px;
+        object-fit: contain;
+      }
+
+      .source-mark.avatar img {
+        padding: 0;
+      }
+
+      .source-mark.tum {
+        background: #fff;
+      }
+
+      .source-mark.tum img {
+        padding: 13px 7px;
+      }
+
+      .source-owner {
+        margin-bottom: 2px;
+        color: var(--muted);
+        font-size: 0.72rem;
+        font-weight: 700;
+        line-height: 1.3;
+        text-transform: uppercase;
+      }
+
+      .source-card h3 {
+        margin-bottom: 0;
+        font-size: 1.34rem;
+        line-height: 1.15;
+      }
+
+      .source-description {
+        flex: 1;
+        margin-bottom: 18px;
+        color: #414751;
+        font-size: 0.94rem;
+      }
+
+      .source-numbers {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+        padding: 14px 0;
+        border-top: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+      }
+
+      .source-numbers strong,
+      .source-numbers span {
+        display: block;
+      }
+
+      .source-numbers strong {
+        font-size: 1.2rem;
+        line-height: 1.1;
+      }
+
+      .source-numbers span {
+        margin-top: 4px;
+        color: var(--muted);
+        font-size: 0.76rem;
+        line-height: 1.25;
+      }
+
+      .source-asset {
+        min-height: 46px;
+        margin: 14px 0 12px;
+        color: var(--muted);
+        font-size: 0.82rem;
+      }
+
+      .source-links {
+        display: flex;
+        gap: 18px;
+        margin-top: auto;
+        font-size: 0.88rem;
+        font-weight: 700;
+      }
+
       .image-strip {
         display: grid;
         grid-template-columns: repeat(5, minmax(0, 1fr));
@@ -362,9 +499,14 @@
         }
 
         .lead-row,
+        .source-intro,
         .two-col,
         .rights-grid {
           grid-template-columns: 1fr;
+        }
+
+        .source-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
         }
 
         .facts {
@@ -393,6 +535,14 @@
         .image-strip,
         .image-strip.six {
           grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .source-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .source-card {
+          min-height: 0;
         }
 
         section {
@@ -471,6 +621,177 @@
             <div class="fact"><strong>270,575</strong><span>observations</span></div>
             <div class="fact"><strong>17,656</strong><span>real metric indoor scenes</span></div>
             <div class="fact"><strong>6</strong><span>source datasets</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="source-section" id="sources">
+        <div class="section-inner">
+          <div class="source-intro">
+            <h2>Six Real-World Sources</h2>
+            <p class="section-copy">
+              FlatLands harmonizes six established indoor datasets into one
+              metric BEV task. The counts below are the scene layouts and
+              retained observations contributed to the FlatLands release.
+            </p>
+          </div>
+
+          <div class="source-grid">
+            <article class="source-card" style="--source-color: #0065bd">
+              <header class="source-card-header">
+                <div class="source-mark tum">
+                  <img src="docs/assets/readme/sources/3rscan-tum.svg" alt="Technical University of Munich">
+                </div>
+                <div>
+                  <p class="source-owner">TUM + Google</p>
+                  <h3>3RScan</h3>
+                </div>
+              </header>
+              <p class="source-description">
+                Multi-session RGB-D reconstructions of naturally changing
+                indoor environments, with aligned textured meshes and
+                consistent instance-level semantic annotations across rescans.
+              </p>
+              <div class="source-numbers">
+                <div><strong>1,291</strong><span>FlatLands scenes</span></div>
+                <div><strong>18,216</strong><span>retained observations</span></div>
+              </div>
+              <p class="source-asset"><strong>FlatLands input:</strong> OBJ meshes with semantic floor labels.</p>
+              <div class="source-links">
+                <a href="https://waldjohannau.github.io/RIO/" target="_blank" rel="noreferrer">Project site</a>
+                <a href="https://waldjohannau.github.io/RIO/#download" target="_blank" rel="noreferrer">Terms</a>
+              </div>
+            </article>
+
+            <article class="source-card" style="--source-color: #222222">
+              <header class="source-card-header">
+                <div class="source-mark avatar">
+                  <img src="docs/assets/readme/sources/arkitscenes-apple.jpg" alt="Apple">
+                </div>
+                <div>
+                  <p class="source-owner">Apple</p>
+                  <h3>ARKitScenes</h3>
+                </div>
+              </header>
+              <p class="source-description">
+                Real-world mobile RGB-D captures collected with Apple LiDAR,
+                including camera poses, surface reconstructions, registered
+                depth, and labeled 3D furniture bounding boxes.
+              </p>
+              <div class="source-numbers">
+                <div><strong>4,803</strong><span>FlatLands scenes</span></div>
+                <div><strong>40,282</strong><span>retained observations</span></div>
+              </div>
+              <p class="source-asset"><strong>FlatLands input:</strong> PLY meshes with height-based floor extraction.</p>
+              <div class="source-links">
+                <a href="https://machinelearning.apple.com/research/arkitscenes" target="_blank" rel="noreferrer">Project site</a>
+                <a href="https://github.com/apple/ARKitScenes/blob/main/LICENSE" target="_blank" rel="noreferrer">Terms</a>
+              </div>
+            </article>
+
+            <article class="source-card" style="--source-color: #ff3158">
+              <header class="source-card-header">
+                <div class="source-mark">
+                  <img src="docs/assets/readme/sources/matterport.svg" alt="Matterport">
+                </div>
+                <div>
+                  <p class="source-owner">Matterport + Academic Partners</p>
+                  <h3>Matterport3D</h3>
+                </div>
+              </header>
+              <p class="source-description">
+                Building-scale RGB-D panoramas with globally aligned surface
+                reconstructions, camera poses, and detailed 2D and 3D semantic
+                segmentations across diverse real interiors.
+              </p>
+              <div class="source-numbers">
+                <div><strong>2,101</strong><span>FlatLands scenes</span></div>
+                <div><strong>38,004</strong><span>retained observations</span></div>
+              </div>
+              <p class="source-asset"><strong>FlatLands input:</strong> PLY meshes with semantic floor labels.</p>
+              <div class="source-links">
+                <a href="https://niessner.github.io/Matterport/" target="_blank" rel="noreferrer">Project site</a>
+                <a href="https://niessner.github.io/Matterport/#download" target="_blank" rel="noreferrer">Terms</a>
+              </div>
+            </article>
+
+            <article class="source-card" style="--source-color: #9fb32b">
+              <header class="source-card-header">
+                <div class="source-mark avatar">
+                  <img src="docs/assets/readme/sources/scannet.png" alt="ScanNet">
+                </div>
+                <div>
+                  <p class="source-owner">Stanford + Princeton + TUM</p>
+                  <h3>ScanNet</h3>
+                </div>
+              </header>
+              <p class="source-description">
+                A large RGB-D video corpus of indoor scans with recovered 3D
+                camera poses, reconstructed surfaces, and instance-level
+                semantic segmentations for scene understanding.
+              </p>
+              <div class="source-numbers">
+                <div><strong>1,508</strong><span>FlatLands scenes</span></div>
+                <div><strong>24,763</strong><span>retained observations</span></div>
+              </div>
+              <p class="source-asset"><strong>FlatLands input:</strong> PLY meshes with semantic floor labels.</p>
+              <div class="source-links">
+                <a href="https://github.com/ScanNet/ScanNet" target="_blank" rel="noreferrer">Project site</a>
+                <a href="https://kaldir.vc.cit.tum.de/scannet/ScanNet_TOS.pdf" target="_blank" rel="noreferrer">Terms</a>
+              </div>
+            </article>
+
+            <article class="source-card" style="--source-color: #1d68f2">
+              <header class="source-card-header">
+                <div class="source-mark avatar">
+                  <img src="docs/assets/readme/sources/zind-zillow.png" alt="Zillow">
+                </div>
+                <div>
+                  <p class="source-owner">Zillow</p>
+                  <h3>ZInD</h3>
+                </div>
+              </header>
+              <p class="source-description">
+                Panoramas from real unfurnished homes with annotated room
+                layouts, doors, windows, openings, 3D camera poses, and final
+                2D floor plans produced through a human-in-the-loop pipeline.
+              </p>
+              <div class="source-numbers">
+                <div><strong>7,026</strong><span>FlatLands scenes</span></div>
+                <div><strong>133,096</strong><span>retained observations</span></div>
+              </div>
+              <p class="source-asset"><strong>FlatLands input:</strong> Panoramas with metrically calibrated floor geometry.</p>
+              <div class="source-links">
+                <a href="https://github.com/zillow/zind" target="_blank" rel="noreferrer">Project site</a>
+                <a href="https://bridgedataoutput.com/zillowterms" target="_blank" rel="noreferrer">Terms</a>
+              </div>
+            </article>
+
+            <article class="source-card" style="--source-color: #9b59c8">
+              <header class="source-card-header">
+                <div class="source-mark avatar">
+                  <img src="docs/assets/readme/sources/scannetpp.png" alt="ScanNet++">
+                </div>
+                <div>
+                  <p class="source-owner">Technical University of Munich</p>
+                  <h3>ScanNet++</h3>
+                </div>
+              </header>
+              <p class="source-description">
+                High-fidelity indoor reconstructions coupling sub-millimeter
+                laser scans, registered DSLR imagery, iPhone RGB-D streams,
+                and long-tail semantic annotations.
+              </p>
+              <div class="source-numbers">
+                <div><strong>927</strong><span>FlatLands scenes</span></div>
+                <div><strong>16,214</strong><span>retained observations</span></div>
+              </div>
+              <p class="source-asset"><strong>FlatLands input:</strong> PLY meshes; held out entirely for OOD testing.</p>
+              <div class="source-links">
+                <a href="https://scannetpp.mlsg.cit.tum.de/scannetpp/" target="_blank" rel="noreferrer">Project site</a>
+                <a href="https://scannetpp.mlsg.cit.tum.de/scannetpp/static/scannetpp-terms-of-use.pdf" target="_blank" rel="noreferrer">Terms</a>
+              </div>
+            </article>
           </div>
         </div>
       </section>
@@ -617,6 +938,11 @@ unzip FlatLands_final_dataset.zip -d FlatLands</code></pre>
               and source archives remain governed by their original dataset
               terms. This site includes research figures to explain the
               benchmark and does not relicense upstream source assets.
+            </p>
+            <p>
+              Source dataset names, company and institution names, trademarks,
+              and logos belong to their respective owners. They are displayed
+              only to identify provenance; no endorsement is implied.
             </p>
             <p>
               See <a href="COPYRIGHT.md">COPYRIGHT.md</a>,

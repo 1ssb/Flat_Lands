@@ -18,6 +18,14 @@ listed in [LICENSES.md](LICENSES.md). Per-observation `metadata.json` source
 fields are the authority for determining which upstream terms apply to each
 FlatLands observation.
 
+Source dataset names, company and institution names, trademarks, and logos are
+the property of their respective owners. Marks for Technical University of
+Munich, Apple, Matterport, ScanNet, Zillow, and ScanNet++ are displayed solely
+to identify the provenance of the six upstream datasets. Their appearance does
+not imply sponsorship or endorsement of FlatLands. The site uses marks obtained
+from the respective official project, institution, company, or GitHub
+organization pages and does not grant any rights to those marks.
+
 Use of FlatLands is permitted for academic research, benchmarking, and
 reproducibility subject to the release notice in [LICENSE](LICENSE). Commercial
 use is permitted only where allowed by every applicable upstream source dataset
