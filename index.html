@@ -1,0 +1,447 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="FlatLands: Generative Floormap Completion From a Single Egocentric View.">
+    <title>FlatLands</title>
+    <style>
+      :root {
+        --ink: #141518;
+        --muted: #5a6170;
+        --panel: #f6f7f4;
+        --line: #d9ded6;
+        --accent: #0b6f8a;
+        --accent-2: #b6541f;
+        --paper: #ffffff;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        color: var(--ink);
+        background: var(--paper);
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        line-height: 1.55;
+      }
+
+      a {
+        color: var(--accent);
+        text-decoration-thickness: 1px;
+        text-underline-offset: 3px;
+      }
+
+      img {
+        display: block;
+        max-width: 100%;
+      }
+
+      .hero {
+        min-height: 84vh;
+        display: grid;
+        align-items: end;
+        background:
+          linear-gradient(180deg, rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0.72)),
+          url("docs/assets/readme/observation_synthesis.png") center / cover no-repeat;
+        color: #fff;
+      }
+
+      .hero-inner,
+      .section-inner {
+        width: min(1120px, calc(100% - 32px));
+        margin: 0 auto;
+      }
+
+      .hero-inner {
+        padding: 64px 0 48px;
+      }
+
+      .eyebrow {
+        margin: 0 0 10px;
+        color: #f5d5bd;
+        font-size: 0.9rem;
+        font-weight: 700;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin-top: 0;
+      }
+
+      h1 {
+        width: min(880px, 100%);
+        margin-bottom: 14px;
+        font-size: clamp(2.9rem, 8vw, 6.4rem);
+        line-height: 0.96;
+        letter-spacing: 0;
+      }
+
+      .hero-copy {
+        width: min(760px, 100%);
+        margin-bottom: 28px;
+        color: #eef5f4;
+        font-size: clamp(1.05rem, 2.2vw, 1.36rem);
+      }
+
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 44px;
+        padding: 10px 16px;
+        border: 1px solid rgba(255, 255, 255, 0.46);
+        border-radius: 6px;
+        color: #fff;
+        font-weight: 700;
+        text-decoration: none;
+        background: rgba(255, 255, 255, 0.12);
+        backdrop-filter: blur(8px);
+      }
+
+      .button.primary {
+        border-color: #f4c7a6;
+        color: #20130c;
+        background: #f4c7a6;
+      }
+
+      main {
+        background: var(--paper);
+      }
+
+      section {
+        border-top: 1px solid var(--line);
+        padding: 64px 0;
+      }
+
+      .lead-row {
+        display: grid;
+        grid-template-columns: minmax(0, 0.9fr) minmax(320px, 1.1fr);
+        gap: 36px;
+        align-items: start;
+      }
+
+      h2 {
+        margin-bottom: 16px;
+        font-size: clamp(1.9rem, 4vw, 3.2rem);
+        line-height: 1.05;
+        letter-spacing: 0;
+      }
+
+      .section-copy {
+        color: var(--muted);
+        font-size: 1.04rem;
+      }
+
+      .facts {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 10px;
+      }
+
+      .fact {
+        min-height: 112px;
+        padding: 18px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--panel);
+      }
+
+      .fact strong {
+        display: block;
+        font-size: clamp(1.55rem, 3vw, 2.35rem);
+        line-height: 1;
+      }
+
+      .fact span {
+        display: block;
+        margin-top: 8px;
+        color: var(--muted);
+        font-size: 0.92rem;
+      }
+
+      .image-strip {
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .image-strip.six {
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+      }
+
+      figure {
+        margin: 0;
+      }
+
+      figure img {
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+        border: 1px solid var(--line);
+        border-radius: 6px;
+        background: #fff;
+      }
+
+      .wide-img img {
+        aspect-ratio: 3 / 2;
+      }
+
+      figcaption {
+        margin-top: 8px;
+        color: var(--muted);
+        font-size: 0.86rem;
+        text-align: center;
+      }
+
+      .download {
+        padding: 18px;
+        overflow-x: auto;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: #111418;
+        color: #eef1f2;
+      }
+
+      code,
+      pre {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+      }
+
+      pre {
+        margin: 0;
+        font-size: 0.94rem;
+      }
+
+      .two-col {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        gap: 24px;
+      }
+
+      .note {
+        padding: 18px;
+        border-left: 4px solid var(--accent-2);
+        background: #fff8f2;
+      }
+
+      footer {
+        padding: 32px 0;
+        color: var(--muted);
+        border-top: 1px solid var(--line);
+      }
+
+      @media (max-width: 820px) {
+        .hero {
+          min-height: 78vh;
+        }
+
+        .lead-row,
+        .two-col {
+          grid-template-columns: 1fr;
+        }
+
+        .facts {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .image-strip,
+        .image-strip.six {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+      }
+
+      @media (max-width: 520px) {
+        .facts,
+        .image-strip,
+        .image-strip.six {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        section {
+          padding: 48px 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="hero">
+      <div class="hero-inner">
+        <p class="eyebrow">ECCV 2026 dataset and benchmark</p>
+        <h1>FlatLands</h1>
+        <p class="hero-copy">
+          Generative floormap completion from a single egocentric view, with
+          real indoor scenes, aligned BEV supervision, and uncertainty-aware
+          evaluation.
+        </p>
+        <nav class="actions" aria-label="Primary links">
+          <a class="button primary" href="https://huggingface.co/datasets/Rudra1ssb/FlatLands">Download Dataset</a>
+          <a class="button" href="https://arxiv.org/abs/2603.16016">Read Paper</a>
+          <a class="button" href="https://github.com/1ssb/Flat_Lands">GitHub</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section>
+        <div class="section-inner lead-row">
+          <div>
+            <h2>Single-view BEV floor completion.</h2>
+            <p class="section-copy">
+              FlatLands turns partial egocentric floor evidence into a
+              benchmark for completing metric traversability maps. Each
+              observation preserves what the camera saw and asks models to infer
+              only the valid, unobserved region.
+            </p>
+          </div>
+          <div class="facts">
+            <div class="fact"><strong>270,575</strong><span>observations</span></div>
+            <div class="fact"><strong>17,656</strong><span>real metric indoor scenes</span></div>
+            <div class="fact"><strong>6</strong><span>source datasets</span></div>
+            <div class="fact"><strong>256 x 256</strong><span>canonical BEV maps</span></div>
+            <div class="fact"><strong>3</strong><span>train / validation / test splits</span></div>
+            <div class="fact"><strong>0.10</strong><span>minimum conditional signal ratio</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-inner">
+          <h2>Observation Packet</h2>
+          <div class="image-strip">
+            <figure class="wide-img">
+              <img src="docs/assets/readme/packet_rgb.png" alt="Egocentric RGB input">
+              <figcaption>RGB context</figcaption>
+            </figure>
+            <figure>
+              <img src="docs/assets/readme/packet_observed_floor.png" alt="Observed floor map">
+              <figcaption>Observed floor</figcaption>
+            </figure>
+            <figure>
+              <img src="docs/assets/readme/packet_unobserved.png" alt="Unobserved mask">
+              <figcaption>Unobserved mask</figcaption>
+            </figure>
+            <figure>
+              <img src="docs/assets/readme/packet_floor_map.png" alt="Complete floor map">
+              <figcaption>Complete floor</figcaption>
+            </figure>
+            <figure>
+              <img src="docs/assets/readme/packet_epistemic_mask.png" alt="Validity mask">
+              <figcaption>Validity mask</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-inner">
+          <h2>Ambiguity Is The Point</h2>
+          <p class="section-copy">
+            A sparse partial map may have several valid completions. FlatLands
+            evaluates stochastic hypotheses and highlights where layout
+            uncertainty concentrates.
+          </p>
+          <div class="image-strip six">
+            <figure>
+              <img src="docs/assets/readme/inverse_observed.png" alt="Partial observed floor">
+              <figcaption>Observation</figcaption>
+            </figure>
+            <figure>
+              <img src="docs/assets/readme/inverse_completion_1.png" alt="Completion sample one">
+              <figcaption>Completion 1</figcaption>
+            </figure>
+            <figure>
+              <img src="docs/assets/readme/inverse_completion_2.png" alt="Completion sample two">
+              <figcaption>Completion 2</figcaption>
+            </figure>
+            <figure>
+              <img src="docs/assets/readme/inverse_completion_3.png" alt="Completion sample three">
+              <figcaption>Completion 3</figcaption>
+            </figure>
+            <figure>
+              <img src="docs/assets/readme/inverse_completion_4.png" alt="Completion sample four">
+              <figcaption>Completion 4</figcaption>
+            </figure>
+            <figure>
+              <img src="docs/assets/readme/inverse_variance.png" alt="Variance map">
+              <figcaption>Variance</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-inner">
+          <h2>RGB-To-BEV Pipeline</h2>
+          <p class="section-copy">
+            The paper instantiates the full monocular pipeline: RGB input,
+            estimated depth, floor segmentation, BEV projection, and sampled
+            floormap completions.
+          </p>
+          <div class="image-strip six">
+            <figure class="wide-img">
+              <img src="docs/assets/readme/pipeline_rgb.png" alt="RGB pipeline input">
+              <figcaption>RGB</figcaption>
+            </figure>
+            <figure class="wide-img">
+              <img src="docs/assets/readme/pipeline_depth.png" alt="Estimated depth">
+              <figcaption>Depth</figcaption>
+            </figure>
+            <figure class="wide-img">
+              <img src="docs/assets/readme/pipeline_segmentation.png" alt="Floor segmentation">
+              <figcaption>Segmentation</figcaption>
+            </figure>
+            <figure>
+              <img src="docs/assets/readme/pipeline_observed_floor.png" alt="Projected observed floor">
+              <figcaption>Observed floor</figcaption>
+            </figure>
+            <figure>
+              <img src="docs/assets/readme/pipeline_sample_1.png" alt="First completion sample">
+              <figcaption>Sample 1</figcaption>
+            </figure>
+            <figure>
+              <img src="docs/assets/readme/pipeline_sample_2.png" alt="Second completion sample">
+              <figcaption>Sample 2</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-inner two-col">
+          <div>
+            <h2>Download</h2>
+            <div class="download">
+              <pre><code>hf download Rudra1ssb/FlatLands FlatLands_final_dataset.zip --repo-type dataset
+unzip FlatLands_final_dataset.zip -d FlatLands</code></pre>
+            </div>
+          </div>
+          <div class="note">
+            <h3>Data Use</h3>
+            <p>
+              FlatLands is a derived research dataset. Users must comply with
+              the upstream source dataset terms listed in
+              <a href="LICENSES.md">LICENSES.md</a>.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="section-inner">
+        <span>FlatLands: Generative Floormap Completion From a Single Egocentric View.</span>
+      </div>
+    </footer>
+  </body>
+</html>
