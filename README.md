@@ -2,9 +2,11 @@
 
 **Generative Floormap Completion From a Single Egocentric View**
 
-[Subhransu S. Bhattacharjee](https://1ssb.github.io/) &middot;
+[Subhransu S. Bhattacharjee](https://1ssb.github.io/)\* &middot;
 [Dylan Campbell](https://sites.google.com/view/djcampbell) &middot;
 [Rahul Shome](https://rahulsho.me/)
+
+\*Corresponding author: [1ssb.rudra@gmail.com](mailto:1ssb.rudra@gmail.com)
 
 **TL;DR:** FlatLands asks a model to complete a metric indoor floormap from one
 partial egocentric observation and represent multiple plausible hidden layouts
@@ -157,6 +159,7 @@ The Hub dataset viewer contains small preview parquet splits; the full
 | Path | Purpose |
 | --- | --- |
 | [`README.md`](README.md) | Public project index |
+| [`8683_FlatLands_poster_v2.pdf`](8683_FlatLands_poster_v2.pdf) | ECCV 2026 poster |
 | [`PROVENANCE.md`](PROVENANCE.md) | Dataset construction, split, source, and metadata details |
 | [`LICENSE`](LICENSE) | FlatLands dataset release notice |
 | [`LICENSES.md`](LICENSES.md) | Upstream dataset terms and project links |
@@ -194,3 +197,8 @@ underlying source dataset assets remain governed by their original terms. See [`
 
 Please also cite the relevant upstream datasets for any FlatLands observations
 used in your work.
+
+## Poster
+
+ECCV 2026 poster: [8683_FlatLands_poster_v2.pdf](8683_FlatLands_poster_v2.pdf)
+(also viewable, zoomable, at the bottom of the [project page](https://1ssb.github.io/Flat_Lands/#poster)).

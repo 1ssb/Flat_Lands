@@ -127,7 +127,7 @@
         display: flex;
         flex-wrap: wrap;
         gap: 5px 10px;
-        margin-bottom: 18px;
+        margin-bottom: 6px;
         color: #d5dddc;
         font-size: 0.96rem;
       }
@@ -144,6 +144,20 @@
 
       .hero-authors span {
         color: #efb88f;
+      }
+
+      .hero-correspondence {
+        margin: 0 0 18px;
+        color: #aeb6b8;
+        font-size: 0.82rem;
+      }
+
+      .hero-correspondence a {
+        color: #d5dddc;
+      }
+
+      .hero-correspondence a:hover {
+        text-decoration: underline;
       }
 
       .eyebrow {
@@ -571,6 +585,25 @@
         color: var(--muted);
       }
 
+      .poster-section {
+        background: #f4f7f5;
+      }
+
+      .poster-frame {
+        height: 88vh;
+        margin-top: 8px;
+        overflow: hidden;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: #fff;
+      }
+
+      .poster-frame iframe {
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+
       footer {
         padding: 32px 0;
         color: var(--muted);
@@ -616,6 +649,10 @@
         .image-strip,
         .image-strip.six {
           grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
+        .poster-frame {
+          height: 70vh;
         }
       }
 
@@ -672,11 +709,14 @@
           <p class="eyebrow">ECCV 2026 dataset and benchmark</p>
           <h1>FlatLands</h1>
           <p class="hero-authors" aria-label="Authors">
-            <a href="https://1ssb.github.io/" target="_blank" rel="noreferrer">Subhransu S. Bhattacharjee</a>
+            <a href="https://1ssb.github.io/" target="_blank" rel="noreferrer">Subhransu S. Bhattacharjee</a><sup>*</sup>
             <span aria-hidden="true">/</span>
             <a href="https://sites.google.com/view/djcampbell" target="_blank" rel="noreferrer">Dylan Campbell</a>
             <span aria-hidden="true">/</span>
             <a href="https://rahulsho.me/" target="_blank" rel="noreferrer">Rahul Shome</a>
+          </p>
+          <p class="hero-correspondence">
+            <sup>*</sup>Corresponding author &middot; <a href="mailto:1ssb.rudra@gmail.com">1ssb.rudra@gmail.com</a>
           </p>
           <p class="hero-copy">
             Generative floormap completion from a single egocentric view, with
@@ -1057,6 +1097,20 @@ unzip FlatLands_final_dataset.zip -d FlatLands</code></pre>
               <a href="LICENSE">LICENSE</a>, and
               <a href="LICENSES.md">LICENSES.md</a>.
             </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="poster-section" id="poster">
+        <div class="section-inner">
+          <h2>Poster</h2>
+          <p class="section-copy">
+            ECCV 2026 poster. Scroll or use the viewer's zoom controls to read
+            it in detail, or
+            <a href="8683_FlatLands_poster_v2.pdf" target="_blank" rel="noreferrer">open the PDF directly</a>.
+          </p>
+          <div class="poster-frame">
+            <iframe src="8683_FlatLands_poster_v2.pdf" title="FlatLands ECCV 2026 poster (PDF)" loading="lazy"></iframe>
           </div>
         </div>
       </section>
