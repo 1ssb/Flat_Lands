@@ -6,7 +6,7 @@
 [Dylan Campbell](https://sites.google.com/view/djcampbell) &middot;
 [Rahul Shome](https://rahulsho.me/)
 
-\*Corresponding author: [1ssb.rudra@gmail.com](mailto:1ssb.rudra@gmail.com)
+\*Corresponding author: [Subhransu.Bhattacharjee@anu.edu.au](mailto:Subhransu.Bhattacharjee@anu.edu.au)
 
 **TL;DR:** FlatLands asks a model to complete a metric indoor floormap from one
 partial egocentric observation and represent multiple plausible hidden layouts
