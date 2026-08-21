@@ -3,8 +3,15 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="FlatLands: Generative Floormap Completion From a Single Egocentric View.">
-    <title>FlatLands</title>
+    <meta name="description" content="FlatLands turns one partial egocentric view into a distribution of plausible metric indoor floormaps for uncertainty-aware navigation.">
+    <meta name="theme-color" content="#090b0d">
+    <meta property="og:title" content="FlatLands — Generative Floormap Completion">
+    <meta property="og:description" content="A dataset and benchmark for uncertainty-aware metric floormap completion from a single egocentric view.">
+    <meta property="og:image" content="https://1ssb.github.io/Flat_Lands/docs/assets/readme/observation_synthesis.png">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://1ssb.github.io/Flat_Lands/">
+    <link rel="canonical" href="https://1ssb.github.io/Flat_Lands/">
+    <title>FlatLands — Generative Floormap Completion</title>
     <style>
       :root {
         --ink: #141518;
@@ -239,6 +246,12 @@
       .button.github {
         color: #171515;
         background: #fff;
+      }
+
+      .button.poster {
+        color: #fff;
+        border-color: rgba(255, 255, 255, 0.32);
+        background: rgba(182, 84, 31, 0.94);
       }
 
       main {
@@ -558,6 +571,120 @@
         font-size: 0.94rem;
       }
 
+      .finding-section {
+        background: #0f3e49;
+        color: #f4f8f7;
+      }
+
+      .finding-intro {
+        display: grid;
+        grid-template-columns: minmax(0, 0.72fr) minmax(320px, 1.28fr);
+        gap: 36px;
+        align-items: end;
+        margin-bottom: 30px;
+      }
+
+      .finding-intro h2,
+      .finding-intro p {
+        margin-bottom: 0;
+      }
+
+      .finding-intro p {
+        color: #cbdcdd;
+      }
+
+      .finding-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 14px;
+      }
+
+      .finding {
+        padding: 22px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.07);
+      }
+
+      .finding strong {
+        display: block;
+        margin-bottom: 10px;
+        color: #ffd2b6;
+        font-size: clamp(1.45rem, 3vw, 2.2rem);
+        line-height: 1;
+      }
+
+      .finding p {
+        margin-bottom: 0;
+        color: #e0ebeb;
+      }
+
+      .citation-section {
+        background: #f4f7f5;
+      }
+
+      .citation-layout {
+        display: grid;
+        grid-template-columns: minmax(0, 0.7fr) minmax(420px, 1.3fr);
+        gap: 32px;
+        align-items: start;
+      }
+
+      .citation-card {
+        overflow: hidden;
+        border: 1px solid #282d31;
+        border-radius: 8px;
+        background: #111418;
+        color: #eef1f2;
+      }
+
+      .citation-toolbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        padding: 10px 12px 10px 18px;
+        border-bottom: 1px solid #343b40;
+        color: #aeb9bb;
+        font-size: 0.82rem;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+
+      .copy-button {
+        min-height: 36px;
+        padding: 7px 12px;
+        border: 1px solid #586267;
+        border-radius: 5px;
+        color: #fff;
+        background: #283137;
+        font: inherit;
+        cursor: pointer;
+        text-transform: none;
+      }
+
+      .copy-button:hover {
+        background: #344149;
+      }
+
+      .copy-button:focus-visible {
+        outline: 3px solid #81c6d5;
+        outline-offset: 2px;
+      }
+
+      .citation-card pre {
+        padding: 20px;
+        overflow-x: auto;
+        line-height: 1.55;
+      }
+
+      .citation-note {
+        min-height: 1.4em;
+        margin: 10px 0 0;
+        color: var(--muted);
+        font-size: 0.86rem;
+      }
+
       .two-col {
         display: grid;
         grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
@@ -633,6 +760,8 @@
         .visual-intro,
         .visual-step,
         .source-intro,
+        .finding-intro,
+        .citation-layout,
         .two-col,
         .rights-grid {
           grid-template-columns: 1fr;
@@ -640,6 +769,10 @@
 
         .source-grid {
           grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .finding-grid {
+          grid-template-columns: 1fr;
         }
 
         .facts {
@@ -719,9 +852,9 @@
             <sup>*</sup>Corresponding author &middot; <a href="mailto:Subhransu.Bhattacharjee@anu.edu.au">Subhransu.Bhattacharjee@anu.edu.au</a>
           </p>
           <p class="hero-copy">
-            Generative floormap completion from a single egocentric view, with
-            real indoor scenes, aligned BEV supervision, and uncertainty-aware
-            evaluation.
+            A camera sees only a sliver of the floor. FlatLands asks what the
+            room beyond it could look like—and where a robot should remain
+            uncertain.
           </p>
           <nav class="actions" aria-label="Primary links">
             <a class="button huggingface" href="https://huggingface.co/datasets/Rudra1ssb/FlatLands">
@@ -736,6 +869,9 @@
               <img src="docs/assets/readme/brands/github.svg" alt="" aria-hidden="true">
               <span>GitHub</span>
             </a>
+            <a class="button poster" href="8683_FlatLands_poster.pdf" target="_blank" rel="noreferrer">
+              <span>View Poster</span>
+            </a>
           </nav>
         </div>
       </div>
@@ -745,11 +881,12 @@
       <section>
         <div class="section-inner lead-row">
           <div>
-            <h2>TL;DR</h2>
+            <h2>One view is not one world</h2>
             <p class="section-copy">
-              FlatLands asks a model to complete a metric indoor floormap from
-              one partial egocentric observation and represent multiple
-              plausible hidden layouts instead of forcing a single guess.
+              A single RGB frame reveals a narrow, occluded slice of traversable
+              space. Several unseen layouts may explain exactly the same
+              evidence, so a useful mapping system must preserve what it knows
+              and represent what it cannot know from that view alone.
             </p>
           </div>
           <div class="facts">
@@ -763,22 +900,22 @@
       <section class="visual-story" id="construction">
         <div class="section-inner">
           <header class="visual-intro">
-            <h2>From Scene To Floormap</h2>
+            <h2>From one view to a spatial belief</h2>
             <p>
-              FlatLands connects reconstructed indoor scenes to partial BEV
-              observations, then completes the unseen floor as a distribution
-              of plausible layouts.
+              FlatLands separates perception from completion: first recover the
+              visible floor in metric bird's-eye view, then model a distribution
+              over the space beyond the camera frustum.
             </p>
           </header>
 
           <article class="visual-step">
             <div class="visual-copy">
-              <p class="visual-index">01 / Data acquisition</p>
-              <h3>Acquire an egocentric observation</h3>
+              <p class="visual-index">01 / Observe</p>
+              <h3>Anchor the evidence in metric space</h3>
               <p>
                 A virtual camera is placed at a physically valid pose in a
-                reconstructed source scene. Visible floor geometry is
-                back-projected, rasterized, and aligned to the camera frame.
+                reconstructed real scene. Visibility and ray occlusion determine
+                exactly which floor cells the view supports in an aligned BEV grid.
               </p>
             </div>
             <figure class="visual-figure">
@@ -789,12 +926,13 @@
 
           <article class="visual-step">
             <div class="visual-copy">
-              <p class="visual-index">02 / Completion process</p>
-              <h3>Predict, project, and sample</h3>
+              <p class="visual-index">02 / Complete</p>
+              <h3>Sample the unseen without rewriting the seen</h3>
               <p>
                 At inference, one RGB frame yields depth and floor estimates,
                 which are projected into observed BEV evidence. A conditional
-                generator then samples completions while preserving that evidence.
+                generator samples possible layouts while observed labels remain
+                hard-clamped.
               </p>
             </div>
             <figure class="visual-figure">
@@ -808,11 +946,12 @@
       <section class="source-section" id="sources">
         <div class="section-inner">
           <div class="source-intro">
-            <h2>Six Real-World Sources</h2>
+            <h2>Built from six real-world sources</h2>
             <p class="section-copy">
-              FlatLands harmonizes six established indoor datasets into one
-              metric BEV task. The counts below are the scene layouts and
-              retained observations contributed to the FlatLands release.
+              The benchmark harmonizes distinct buildings, sensors, capture
+              systems, and architectural styles into one metric BEV task.
+              ScanNet++ is never seen during training and serves as the
+              out-of-distribution test.
             </p>
           </div>
 
@@ -978,7 +1117,12 @@
 
       <section>
         <div class="section-inner">
-          <h2>Observation Packet</h2>
+          <h2>What one training example contains</h2>
+          <p class="section-copy">
+            Every observation keeps the input evidence, completion region,
+            full target, valid workspace, and provenance aligned cell by cell.
+            Evaluation is restricted to cells that are both valid and unobserved.
+          </p>
           <div class="image-strip">
             <figure class="wide-img">
               <img src="docs/assets/readme/packet_rgb.png" alt="Egocentric RGB input">
@@ -1006,11 +1150,12 @@
 
       <section>
         <div class="section-inner">
-          <h2>Ambiguity Is The Point</h2>
+          <h2>Ambiguity is the point</h2>
           <p class="section-copy">
-            A sparse partial map may have several valid completions. FlatLands
-            evaluates stochastic hypotheses and highlights where layout
-            uncertainty concentrates.
+            The four layouts below are real valid targets—not model samples.
+            They agree on the shared observation and disagree only where the
+            evidence permits different geometry. A calibrated model should
+            cover those alternatives and localize uncertainty to their boundaries.
           </p>
           <div class="image-strip six">
             <figure>
@@ -1018,45 +1163,128 @@
               <figcaption>Observation</figcaption>
             </figure>
             <figure>
-              <img src="docs/assets/readme/inverse_completion_1.png" alt="Completion sample one">
-              <figcaption>Completion 1</figcaption>
+              <img src="docs/assets/readme/inverse_completion_1.png" alt="First valid ground-truth layout">
+              <figcaption>Valid layout 1</figcaption>
             </figure>
             <figure>
-              <img src="docs/assets/readme/inverse_completion_2.png" alt="Completion sample two">
-              <figcaption>Completion 2</figcaption>
+              <img src="docs/assets/readme/inverse_completion_2.png" alt="Second valid ground-truth layout">
+              <figcaption>Valid layout 2</figcaption>
             </figure>
             <figure>
-              <img src="docs/assets/readme/inverse_completion_3.png" alt="Completion sample three">
-              <figcaption>Completion 3</figcaption>
+              <img src="docs/assets/readme/inverse_completion_3.png" alt="Third valid ground-truth layout">
+              <figcaption>Valid layout 3</figcaption>
             </figure>
             <figure>
-              <img src="docs/assets/readme/inverse_completion_4.png" alt="Completion sample four">
-              <figcaption>Completion 4</figcaption>
+              <img src="docs/assets/readme/inverse_completion_4.png" alt="Fourth valid ground-truth layout">
+              <figcaption>Valid layout 4</figcaption>
             </figure>
             <figure>
-              <img src="docs/assets/readme/inverse_variance.png" alt="Variance map">
-              <figcaption>Variance</figcaption>
+              <img src="docs/assets/readme/inverse_variance.png" alt="Per-cell disagreement between valid layouts">
+              <figcaption>Layout disagreement</figcaption>
             </figure>
           </div>
         </div>
       </section>
 
-      <section>
+      <section class="finding-section" id="findings">
+        <div class="section-inner">
+          <header class="finding-intro">
+            <h2>What the benchmark reveals</h2>
+            <p>
+              Eleven methods—from training-free rules and deterministic
+              networks to diffusion and flow matching—receive the same evidence
+              and are scored under one uncertainty-aware protocol.
+            </p>
+          </header>
+          <div class="finding-grid">
+            <article class="finding">
+              <strong>Best-of-4</strong>
+              <p>
+                Every stochastic generator surpasses every deterministic
+                predictor when allowed to cover four plausible hypotheses.
+              </p>
+            </article>
+            <article class="finding">
+              <strong>Best MES</strong>
+              <p>
+                Flow Matching with Cross-Attention leads the multi-sample
+                energy score on both in-distribution and held-out OOD scenes.
+              </p>
+            </article>
+            <article class="finding">
+              <strong>~600&times;</strong>
+              <p>
+                Its boundary variance is about 600 times its interior variance,
+                concentrating uncertainty where room geometry is unresolved.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="download">
         <div class="section-inner two-col">
           <div>
-            <h2>Download</h2>
+            <h2>Use FlatLands</h2>
+            <p class="section-copy">
+              Download the validated release from
+              <a href="https://huggingface.co/datasets/Rudra1ssb/FlatLands">Hugging Face</a>
+              and find evaluation code and baseline implementations on
+              <a href="https://github.com/1ssb/Flat_Lands">GitHub</a>.
+            </p>
             <div class="download">
               <pre><code>hf download Rudra1ssb/FlatLands FlatLands_final_dataset.zip --repo-type dataset
 unzip FlatLands_final_dataset.zip -d FlatLands</code></pre>
             </div>
           </div>
           <div class="note">
-            <h3>Data Use</h3>
+            <h3>Data use</h3>
             <p>
-              FlatLands is a derived research dataset. Users must comply with
-              the upstream source dataset terms listed in
-              <a href="LICENSES.md">LICENSES.md</a>.
+              FlatLands is a derived research dataset. The original captures
+              and reconstructions remain governed by their source terms. Review
+              <a href="LICENSES.md">LICENSES.md</a> before use.
             </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="citation-section" id="citation">
+        <div class="section-inner citation-layout">
+          <div>
+            <h2>Cite FlatLands</h2>
+            <p class="section-copy">
+              If the dataset, benchmark, or models help your work, please cite
+              the ECCV 2026 paper.
+            </p>
+          </div>
+          <div>
+            <div class="citation-card">
+              <div class="citation-toolbar">
+                <span>BibTeX</span>
+                <button class="copy-button" type="button" data-copy-bibtex>Copy BibTeX</button>
+              </div>
+              <pre><code id="bibtex-code">@inproceedings{bhattacharjee2026flatlands,
+  title     = {{FlatLands}: Generative Floormap Completion From a Single Egocentric View},
+  author    = {Bhattacharjee, Subhransu S. and Campbell, Dylan and Shome, Rahul},
+  booktitle = {European Conference on Computer Vision (ECCV)},
+  year      = {2026},
+  url       = {https://arxiv.org/abs/2603.16016}
+}</code></pre>
+            </div>
+            <p class="citation-note" role="status" aria-live="polite" data-copy-status></p>
+          </div>
+        </div>
+      </section>
+
+      <section class="poster-section" id="poster">
+        <div class="section-inner">
+          <h2>ECCV 2026 poster</h2>
+          <p class="section-copy">
+            Explore the updated poster below, use the viewer controls to zoom,
+            or <a href="8683_FlatLands_poster.pdf" target="_blank" rel="noreferrer">open the PDF directly</a>.
+          </p>
+          <div class="poster-frame">
+            <iframe src="8683_FlatLands_poster.pdf" title="Updated FlatLands ECCV 2026 poster (PDF)" loading="lazy"></iframe>
           </div>
         </div>
       </section>
@@ -1064,7 +1292,7 @@ unzip FlatLands_final_dataset.zip -d FlatLands</code></pre>
       <section class="rights" id="copyright">
         <div class="section-inner rights-grid">
           <div>
-            <h2>Copyright &amp; Data Rights</h2>
+            <h2>Copyright &amp; data rights</h2>
             <p class="section-copy">
               FlatLands release materials are copyright (c) 2026 Subhransu S.
               Bhattacharjee, Dylan Campbell, and Rahul Shome.
@@ -1072,45 +1300,22 @@ unzip FlatLands_final_dataset.zip -d FlatLands</code></pre>
           </div>
           <div class="rights-copy">
             <p>
-              FlatLands is a derived research dataset. The derived BEV maps,
-              masks, metadata, statistics, provenance records, and release text
-              are provided under the FlatLands release notice.
+              The derived BEV maps, masks, metadata, statistics, provenance
+              records, and release text are provided under the FlatLands release
+              notice. Underlying RGB-D captures, meshes, point clouds, panoramas,
+              and source archives retain their original terms.
             </p>
             <p>
-              The underlying RGB-D captures, meshes, point clouds, panoramas,
-              and source archives remain governed by their original dataset
-              terms. This site includes research figures to explain the
-              benchmark and does not relicense upstream source assets.
-            </p>
-            <p>
-              Paper figures are copyright (c) 2026 the FlatLands authors and
-              are reproduced under the paper's
+              Paper figures are reproduced under the paper's
               <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0 license</a>.
-            </p>
-            <p>
-              Source dataset names, company and institution names, trademarks,
-              and logos belong to their respective owners. They are displayed
-              only to identify provenance; no endorsement is implied.
+              Source names, institution names, trademarks, and logos belong to
+              their respective owners and identify provenance only.
             </p>
             <p>
               See <a href="COPYRIGHT.md">COPYRIGHT.md</a>,
               <a href="LICENSE">LICENSE</a>, and
               <a href="LICENSES.md">LICENSES.md</a>.
             </p>
-          </div>
-        </div>
-      </section>
-
-      <section class="poster-section" id="poster">
-        <div class="section-inner">
-          <h2>Poster</h2>
-          <p class="section-copy">
-            ECCV 2026 poster. Scroll or use the viewer's zoom controls to read
-            it in detail, or
-            <a href="8683_FlatLands_poster_v2.pdf" target="_blank" rel="noreferrer">open the PDF directly</a>.
-          </p>
-          <div class="poster-frame">
-            <iframe src="8683_FlatLands_poster_v2.pdf" title="FlatLands ECCV 2026 poster (PDF)" loading="lazy"></iframe>
           </div>
         </div>
       </section>
@@ -1122,5 +1327,44 @@ unzip FlatLands_final_dataset.zip -d FlatLands</code></pre>
         <p>FlatLands: Generative Floormap Completion From a Single Egocentric View.</p>
       </div>
     </footer>
+    <script>
+      (() => {
+        const button = document.querySelector("[data-copy-bibtex]");
+        const code = document.getElementById("bibtex-code");
+        const status = document.querySelector("[data-copy-status]");
+
+        if (!button || !code || !status) return;
+
+        button.addEventListener("click", async () => {
+          const bibtex = code.textContent.trim();
+
+          try {
+            if (navigator.clipboard && window.isSecureContext) {
+              await navigator.clipboard.writeText(bibtex);
+            } else {
+              const field = document.createElement("textarea");
+              field.value = bibtex;
+              field.setAttribute("readonly", "");
+              field.style.position = "fixed";
+              field.style.opacity = "0";
+              document.body.appendChild(field);
+              field.select();
+              const copied = document.execCommand("copy");
+              field.remove();
+              if (!copied) throw new Error("Copy failed");
+            }
+
+            button.textContent = "Copied";
+            status.textContent = "BibTeX copied to clipboard.";
+            window.setTimeout(() => {
+              button.textContent = "Copy BibTeX";
+              status.textContent = "";
+            }, 2400);
+          } catch (error) {
+            status.textContent = "Copy was blocked. Select the BibTeX and copy it manually.";
+          }
+        });
+      })();
+    </script>
   </body>
 </html>

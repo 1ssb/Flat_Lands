@@ -159,7 +159,7 @@ The Hub dataset viewer contains small preview parquet splits; the full
 | Path | Purpose |
 | --- | --- |
 | [`README.md`](README.md) | Public project index |
-| [`8683_FlatLands_poster_v2.pdf`](8683_FlatLands_poster_v2.pdf) | ECCV 2026 poster |
+| [`8683_FlatLands_poster.pdf`](8683_FlatLands_poster.pdf) | Updated ECCV 2026 poster |
 | [`PROVENANCE.md`](PROVENANCE.md) | Dataset construction, split, source, and metadata details |
 | [`LICENSE`](LICENSE) | FlatLands dataset release notice |
 | [`LICENSES.md`](LICENSES.md) | Upstream dataset terms and project links |
@@ -191,7 +191,8 @@ underlying source dataset assets remain governed by their original terms. See [`
   title     = {{FlatLands}: Generative Floormap Completion From a Single Egocentric View},
   author    = {Bhattacharjee, Subhransu S. and Campbell, Dylan and Shome, Rahul},
   booktitle = {European Conference on Computer Vision (ECCV)},
-  year      = {2026}
+  year      = {2026},
+  url       = {https://arxiv.org/abs/2603.16016}
 }
 ```
 
@@ -200,5 +201,5 @@ used in your work.
 
 ## Poster
 
-ECCV 2026 poster: [8683_FlatLands_poster_v2.pdf](8683_FlatLands_poster_v2.pdf)
+ECCV 2026 poster: [8683_FlatLands_poster.pdf](8683_FlatLands_poster.pdf)
 (also viewable, zoomable, at the bottom of the [project page](https://1ssb.github.io/Flat_Lands/#poster)).
