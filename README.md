@@ -159,7 +159,7 @@ The Hub dataset viewer contains small preview parquet splits; the full
 | Path | Purpose |
 | --- | --- |
 | [`README.md`](README.md) | Public project index |
-| [`8683_FlatLands_poster.pdf`](8683_FlatLands_poster.pdf) | Updated ECCV 2026 poster |
+| [`FlatLands_poster_DIGITAL.png`](FlatLands_poster_DIGITAL.png) | Updated ECCV 2026 digital poster |
 | [`PROVENANCE.md`](PROVENANCE.md) | Dataset construction, split, source, and metadata details |
 | [`LICENSE`](LICENSE) | FlatLands dataset release notice |
 | [`LICENSES.md`](LICENSES.md) | Upstream dataset terms and project links |
@@ -201,5 +201,5 @@ used in your work.
 
 ## Poster
 
-ECCV 2026 poster: [8683_FlatLands_poster.pdf](8683_FlatLands_poster.pdf)
-(also viewable, zoomable, at the bottom of the [project page](https://1ssb.github.io/Flat_Lands/#poster)).
+ECCV 2026 poster: [FlatLands_poster_DIGITAL.png](FlatLands_poster_DIGITAL.png)
+(also viewable at the bottom of the [project page](https://1ssb.github.io/Flat_Lands/#poster)).

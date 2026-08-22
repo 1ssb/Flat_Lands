@@ -719,7 +719,6 @@
       }
 
       .poster-frame {
-        height: 88vh;
         margin-top: 8px;
         overflow: hidden;
         border: 1px solid var(--line);
@@ -727,10 +726,14 @@
         background: #fff;
       }
 
-      .poster-frame iframe {
+      .poster-frame a {
+        display: block;
+      }
+
+      .poster-frame img {
+        display: block;
         width: 100%;
-        height: 100%;
-        border: 0;
+        height: auto;
       }
 
       footer {
@@ -786,9 +789,6 @@
           grid-template-columns: repeat(3, minmax(0, 1fr));
         }
 
-        .poster-frame {
-          height: 70vh;
-        }
       }
 
       @media (max-width: 520px) {
@@ -889,7 +889,7 @@
               <img src="docs/assets/readme/brands/github.svg" alt="" aria-hidden="true">
               <span>GitHub</span>
             </a>
-            <a class="button poster" href="8683_FlatLands_poster.pdf" target="_blank" rel="noreferrer">
+            <a class="button poster" href="FlatLands_poster_DIGITAL.png" target="_blank" rel="noreferrer">
               <span>View Poster</span>
             </a>
           </nav>
@@ -1300,11 +1300,13 @@ unzip FlatLands_final_dataset.zip -d FlatLands</code></pre>
         <div class="section-inner">
           <h2>ECCV 2026 poster</h2>
           <p class="section-copy">
-            Explore the updated poster below, use the viewer controls to zoom,
-            or <a href="8683_FlatLands_poster.pdf" target="_blank" rel="noreferrer">open the PDF directly</a>.
+            Explore the updated digital poster below, or
+            <a href="FlatLands_poster_DIGITAL.png" target="_blank" rel="noreferrer">open the full-resolution PNG</a>.
           </p>
           <div class="poster-frame">
-            <iframe src="8683_FlatLands_poster.pdf" title="Updated FlatLands ECCV 2026 poster (PDF)" loading="lazy"></iframe>
+            <a href="FlatLands_poster_DIGITAL.png" target="_blank" rel="noreferrer">
+              <img src="FlatLands_poster_DIGITAL.png" alt="FlatLands ECCV 2026 poster" loading="lazy">
+            </a>
           </div>
         </div>
       </section>

@@ -32,7 +32,7 @@ jobs:
         run: |
           mkdir -p _site
           cp index.html README.md LICENSE LICENSES.md PROVENANCE.md COPYRIGHT.md \
-            8683_FlatLands_poster.pdf .nojekyll _site/
+            FlatLands_poster_DIGITAL.png .nojekyll _site/
           cp -R docs _site/
 
       - name: Upload Pages artifact
