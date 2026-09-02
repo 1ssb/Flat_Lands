@@ -250,11 +250,6 @@
         background: #fff;
       }
 
-      .button.poster {
-        color: #fff;
-        border-color: rgba(255, 255, 255, 0.32);
-        background: rgba(182, 84, 31, 0.94);
-      }
 
       main {
         background: var(--paper);
@@ -714,27 +709,6 @@
         color: var(--muted);
       }
 
-      .poster-section {
-        background: #f4f7f5;
-      }
-
-      .poster-frame {
-        margin-top: 8px;
-        overflow: hidden;
-        border: 1px solid var(--line);
-        border-radius: 8px;
-        background: #fff;
-      }
-
-      .poster-frame a {
-        display: block;
-      }
-
-      .poster-frame img {
-        display: block;
-        width: 100%;
-        height: auto;
-      }
 
       footer {
         padding: 32px 0;
@@ -859,7 +833,7 @@
       </div>
       <div class="hero-inner">
         <div class="hero-main">
-          <p class="eyebrow">ECCV 2026 Datasets and Benchmarks Track &middot; Computer Vision for Robotics</p>
+          <p class="eyebrow">Generative Floormap Completion &middot; Computer Vision for Robotics</p>
           <h1>FlatLands</h1>
           <p class="hero-authors" aria-label="Authors">
             <a href="https://1ssb.github.io/" target="_blank" rel="noreferrer">Subhransu S. Bhattacharjee</a><sup>*</sup>
@@ -888,9 +862,6 @@
             <a class="button github" href="https://github.com/1ssb/Flat_Lands">
               <img src="docs/assets/readme/brands/github.svg" alt="" aria-hidden="true">
               <span>GitHub</span>
-            </a>
-            <a class="button poster" href="FlatLands_poster_DIGITAL.png" target="_blank" rel="noreferrer">
-              <span>View Poster</span>
             </a>
           </nav>
         </div>
@@ -1274,7 +1245,7 @@ unzip FlatLands_final_dataset.zip -d FlatLands</code></pre>
             <h2>Cite FlatLands</h2>
             <p class="section-copy">
               If the dataset, benchmark, or models help your work, please cite
-              the ECCV 2026 paper.
+              the arXiv preprint.
             </p>
           </div>
           <div>
@@ -1283,26 +1254,19 @@ unzip FlatLands_final_dataset.zip -d FlatLands</code></pre>
                 <span>BibTeX</span>
                 <button class="copy-button" type="button" data-copy-bibtex>Copy BibTeX</button>
               </div>
-              <pre><code id="bibtex-code">@inproceedings{bhattacharjee2026flatlands,
+              <pre><code id="bibtex-code">@article{bhattacharjee2026flatlands,
   title     = {{FlatLands}: Generative Floormap Completion From a Single Egocentric View},
   author    = {Bhattacharjee, Subhransu S. and Campbell, Dylan and Shome, Rahul},
-  booktitle = {European Conference on Computer Vision (ECCV)},
+  journal   = {arXiv preprint arXiv:2603.16016},
   year      = {2026},
+  eprint    = {2603.16016},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CV},
+  doi       = {10.48550/arXiv.2603.16016},
   url       = {https://arxiv.org/abs/2603.16016}
 }</code></pre>
             </div>
             <p class="citation-note" role="status" aria-live="polite" data-copy-status></p>
-          </div>
-        </div>
-      </section>
-
-      <section class="poster-section" id="poster">
-        <div class="section-inner">
-          <h2>ECCV 2026 poster</h2>
-          <div class="poster-frame">
-            <a href="FlatLands_poster_DIGITAL.png" target="_blank" rel="noreferrer">
-              <img src="FlatLands_poster_DIGITAL.png" alt="FlatLands ECCV 2026 poster" loading="lazy">
-            </a>
           </div>
         </div>
       </section>
